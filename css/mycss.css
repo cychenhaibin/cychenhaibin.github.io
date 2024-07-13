@@ -52,15 +52,14 @@
 /*    color: #fff;*/
 /*    background-color: #49b1f5;*/
 /*}*/
-// 美化滚动条
-   ::-webkit-scrollbar {
-       width: 5px;
-       height: 5px;
-   }
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
 
 ::-webkit-scrollbar-track {
     width: 6px;
-    background: rgba(#101f1c, 0.1);
     -webkit-border-radius: 2em;
     -moz-border-radius: 2em;
     border-radius: 2em;
