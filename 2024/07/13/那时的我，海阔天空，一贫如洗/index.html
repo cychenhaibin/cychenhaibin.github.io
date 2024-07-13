@@ -10,131 +10,13 @@
 <meta property="article:modified_time" content="2024-07-13T11:08:54.984Z">
 <meta property="article:author" content="Camila">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/07/13/%E9%82%A3%E6%97%B6%E7%9A%84%E6%88%91%EF%BC%8C%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA%EF%BC%8C%E4%B8%80%E8%B4%AB%E5%A6%82%E6%B4%97/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.14.0-b3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.35/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>(()=>{
-      const saveToLocal = {
-        set: (key, value, ttl) => {
-          if (ttl === 0) return
-          const now = Date.now()
-          const expiry = now + ttl * 86400000
-          const item = {
-            value,
-            expiry
-          }
-          localStorage.setItem(key, JSON.stringify(item))
-        },
-      
-        get: key => {
-          const itemStr = localStorage.getItem(key)
-      
-          if (!itemStr) {
-            return undefined
-          }
-          const item = JSON.parse(itemStr)
-          const now = Date.now()
-      
-          if (now > item.expiry) {
-            localStorage.removeItem(key)
-            return undefined
-          }
-          return item.value
-        }
-      }
-      
-      window.btf = {
-        saveToLocal: saveToLocal,
-        getScript: (url, attr = {}) => new Promise((resolve, reject) => {
-          const script = document.createElement('script')
-          script.src = url
-          script.async = true
-          script.onerror = reject
-          script.onload = script.onreadystatechange = function() {
-            const loadState = this.readyState
-            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-            script.onload = script.onreadystatechange = null
-            resolve()
-          }
-
-          Object.keys(attr).forEach(key => {
-            script.setAttribute(key, attr[key])
-          })
-
-          document.head.appendChild(script)
-        }),
-
-        getCSS: (url, id = false) => new Promise((resolve, reject) => {
-          const link = document.createElement('link')
-          link.rel = 'stylesheet'
-          link.href = url
-          if (id) link.id = id
-          link.onerror = reject
-          link.onload = link.onreadystatechange = function() {
-            const loadState = this.readyState
-            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-            link.onload = link.onreadystatechange = null
-            resolve()
-          }
-          document.head.appendChild(link)
-        }),
-
-        addGlobalFn: (key, fn, name = false, parent = window) => {
-          const pjaxEnable = false
-          if (!pjaxEnable && key.startsWith('pjax')) return
-
-          const globalFn = parent.globalFn || {}
-          const keyObj = globalFn[key] || {}
-    
-          if (name && keyObj[name]) return
-    
-          name = name || Object.keys(keyObj).length
-          keyObj[name] = fn
-          globalFn[key] = keyObj
-          parent.globalFn = globalFn
-        }
-      }
-    
-      const activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      const activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-
-      btf.activateDarkMode = activateDarkMode
-      btf.activateLightMode = activateLightMode
-      
-      const t = saveToLocal.get('theme')
-    
-        if (t === 'dark') activateDarkMode()
-        else if (t === 'light') activateLightMode()
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-      const detectApple = () => {
-        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-          document.documentElement.classList.add('apple')
-        }
-      }
-      detectApple()
-    })()</script><script>const GLOBAL_CONFIG = {
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/07/13/%E9%82%A3%E6%97%B6%E7%9A%84%E6%88%91%EF%BC%8C%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA%EF%BC%8C%E4%B8%80%E8%B4%AB%E5%A6%82%E6%B4%97/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
   localSearch: undefined,
   translate: undefined,
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":true,"highlightMacStyle":false},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
   copy: {
     success: 'Copy Successful',
     error: 'Copy Error',
@@ -144,7 +26,7 @@
     homepage: false,
     post: false
   },
-  runtime: '',
+  runtime: 'days',
   dateSuffix: {
     just: 'Just now',
     min: 'minutes ago',
@@ -174,14 +56,112 @@
   isHighlightShrink: false,
   isToc: false,
   postUpdate: '2024-07-13 19:08:54'
-}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Camila's blog"><span class="site-name">Camila's blog</span></a></span><div id="menus"><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">那时的我，海阔天空，一贫如洗</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-07-13T07:28:47.000Z" title="Created 2024-07-13 15:28:47">2024-07-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-07-13T11:08:54.984Z" title="Updated 2024-07-13 19:08:54">2024-07-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="那时的我，海阔天空，一贫如洗"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>​		本人是重庆邮电大学2026届的计算机科学与技术在校本科生，现在大学生活已经过了两年了，我的大一生活过的滋润，和普通大学生一样享受着大学生活，认识很多朋友，被一个学姐带进了团学会，也就是学生会，有着一手的资源，而这些资源也让我快乐的度过了我大学以来学校所有的实验课，大一上学校安排了线性代数和高数还有C语言这几门专业课，每天都听不懂老师在讲什么，基本上都是看b站的宋浩老师才挺过来不挂科，给导员提交了入党申请，因为疫情，大一的考试除了高数，线性代数和英语等大一下开学再考其他的科目都是线上考试，线上考试有的人或许就会笑了，现在的我也是，但是当时的我不知道线上考试的水分，其他同学还在请外援，网上找答案的时候，我还在死扣代码，成绩出来后班里排中上，C语言也是我最开始接触的语言，还记得C语言的大作业，这可能是我大学四年最认真的，纯手搓的，这也是我最自豪的，就这样我的大一上结束了，转眼来到大一下，大一下的课程有python，高数下和大物，应该还有一些专业课我记不得了，反正能让我感受到难度一下子上升，尤其是高数，所以期末我就早早准备了，高数险些挂了，大一下专业分流，想过去最差的专业卷保研，或者去最好的专业当倒数，但是前者我不知道有多少人有这种想法，我不敢赌也赌不起，所以毫不犹豫的选择了学院最好的专业：计算机科学与技术，等着被卷，退则可就业，进则可考研，专业分流后重新分班，我知道这些都是排名前200的人（一共600多个人），可能卷不过他们，后面事实也是这样，大一上因为疫情原因，团学会那边没什么工作，疫情结束工作也就来了，大一下快结束时，团学会开始换届了，也是这个时候让我体验到了团学会的恶心，现在的领导都喜欢把功劳归到自己的身上，最终期末成绩出来了，没有挂科，反而排名进了很多，就这样我的大一下生活结束了，摆而美好着，而就在我以为我的大学四年都会这么顺利的时候，我的大二生活变了，机缘巧合之下选择了学习前端，加入了老师实验室，开始学习机器学习，并想着在毕业前发一篇论文，前端技术和机器学习一并学习着，看到这里你可能觉得没有什么不同，那么接下来就是压力倍增的时候，学期开学通过室友认识了一个女孩，开始没有怎么接触，随着上课接触的就多了，就互相了解了，因为她让我决定不再继续摆下去，也是因为她让我难过、悲伤、痛苦，让我变得很悲观，我和她的故事会在之后的博客里更新，在这里就不提了，大二上学习了数电，这也是我最头疼的一门课，数据结构，离散数学，概率论，大学物理接踵而来，课程难度再度升级，作为一个平时只会偶尔学习的我，这学期忙的焦头烂额，我把大部分时间给了我的课外学习，前端和机器学习依旧在我的学习计划中，我依然想起来我的数电实验期中考试实操最后是我的一个朋友帮我完成的，为了报答他，我后面都尽力的去帮助他，当然他还帮了我很多，时间一点一点流逝，转眼又快到了期末，这个期间也是考研的几天，悲观者无处可去，在考研的时机进到了考研的教室复习着什么都不会的科目，这无疑是对我心态的打击，受不了了，待了一个下午我便出来了，这学期的后半部分我基本上都是在伤心和迷茫中度过，家里有两个姐姐就是这次考研，我不知道我以后的路该怎么走，也没有让我想努力的人出现，这学期复习的很差，悲观者能复习的多好？期末成绩出来后，胆战心惊查成绩，还好没挂，除了概率论和离散数学全是60多，又一学期过去了，在这个学期的寒假我参加了我们学校的CSA的数据工程，没有学的？那就逼着自己学，让自己尽快走出悲痛，也是在这个寒假我重拾了LOLm，白天在电脑面前学习，晚上在峡谷练英雄，2月中旬我在S12赛季从黄金打到了大师，寒假彻底疯狂，不仅过了数据工程还过了工作室前端的中期考核，2月低开学，这短短几十行就来到了大二下，一眼望过去仿佛能看到毕业还有那迷茫的未来，开学没过多久，我之前参加考核的工作室找到了我，因为项目缺人，加上我之前的考核项目做的还可以，就问我愿不愿意来，这种事情我当然愿意呀，我就毫不犹豫的答应了，隔天另外一个工作室通过别人介绍也找到了我，当时我还不知道是工作室，以为是一个项目组，当时学姐告诉我第二天早上一起摸个底，摸个底？我当成普通话以为是一起去看看是什么项目，就这样我带着好奇心入睡了，第二天被闹钟吵醒，想起来要去项目摸底，打开手机一看，哪是什么项目摸底呀，是技术摸底，简称面试，我什么也没准备，还有十几分钟，只能硬着头皮上了，我还是第一个面试，回答的时候说的啃啃哇哇，40分钟过去，面试结束了，问的很基础吧，都按照自己的记忆答出来了，面试完回想起来原来摸底是重庆话，在重庆话的意思里面是了解水平，下午的时候收到负责人发的信息说我面试通过，随之发了一份工作室官网，这我才知道这个是工作室，就这样我在大二下加入了两个工作室，写到这里有点累了，加入工作室了后面的故事会在之后的博客里更新。</p>
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/node_modules/hexo-theme-butterfly/source/css/mycss.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/source/img/Screenshot_2024-07-10.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Camila's blog"><span class="site-name">Camila's blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">那时的我，海阔天空，一贫如洗</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-07-13T07:28:47.000Z" title="Created 2024-07-13 15:28:47">2024-07-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-07-13T11:08:54.984Z" title="Updated 2024-07-13 19:08:54">2024-07-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="那时的我，海阔天空，一贫如洗"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>​		本人是重庆邮电大学2026届的计算机科学与技术在校本科生，现在大学生活已经过了两年了，我的大一生活过的滋润，和普通大学生一样享受着大学生活，认识很多朋友，被一个学姐带进了团学会，也就是学生会，有着一手的资源，而这些资源也让我快乐的度过了我大学以来学校所有的实验课，大一上学校安排了线性代数和高数还有C语言这几门专业课，每天都听不懂老师在讲什么，基本上都是看b站的宋浩老师才挺过来不挂科，给导员提交了入党申请，因为疫情，大一的考试除了高数，线性代数和英语等大一下开学再考其他的科目都是线上考试，线上考试有的人或许就会笑了，现在的我也是，但是当时的我不知道线上考试的水分，其他同学还在请外援，网上找答案的时候，我还在死扣代码，成绩出来后班里排中上，C语言也是我最开始接触的语言，还记得C语言的大作业，这可能是我大学四年最认真的，纯手搓的，这也是我最自豪的，就这样我的大一上结束了，转眼来到大一下，大一下的课程有python，高数下和大物，应该还有一些专业课我记不得了，反正能让我感受到难度一下子上升，尤其是高数，所以期末我就早早准备了，高数险些挂了，大一下专业分流，想过去最差的专业卷保研，或者去最好的专业当倒数，但是前者我不知道有多少人有这种想法，我不敢赌也赌不起，所以毫不犹豫的选择了学院最好的专业：计算机科学与技术，等着被卷，退则可就业，进则可考研，专业分流后重新分班，我知道这些都是排名前200的人（一共600多个人），可能卷不过他们，后面事实也是这样，大一上因为疫情原因，团学会那边没什么工作，疫情结束工作也就来了，大一下快结束时，团学会开始换届了，也是这个时候让我体验到了团学会的恶心，现在的领导都喜欢把功劳归到自己的身上，最终期末成绩出来了，没有挂科，反而排名进了很多，就这样我的大一下生活结束了，摆而美好着，而就在我以为我的大学四年都会这么顺利的时候，我的大二生活变了，机缘巧合之下选择了学习前端，加入了老师实验室，开始学习机器学习，并想着在毕业前发一篇论文，前端技术和机器学习一并学习着，看到这里你可能觉得没有什么不同，那么接下来就是压力倍增的时候，学期开学通过室友认识了一个女孩，开始没有怎么接触，随着上课接触的就多了，就互相了解了，因为她让我决定不再继续摆下去，也是因为她让我难过、悲伤、痛苦，让我变得很悲观，我和她的故事会在之后的博客里更新，在这里就不提了，大二上学习了数电，这也是我最头疼的一门课，数据结构，离散数学，概率论，大学物理接踵而来，课程难度再度升级，作为一个平时只会偶尔学习的我，这学期忙的焦头烂额，我把大部分时间给了我的课外学习，前端和机器学习依旧在我的学习计划中，我依然想起来我的数电实验期中考试实操最后是我的一个朋友帮我完成的，为了报答他，我后面都尽力的去帮助他，当然他还帮了我很多，时间一点一点流逝，转眼又快到了期末，这个期间也是考研的几天，悲观者无处可去，在考研的时机进到了考研的教室复习着什么都不会的科目，这无疑是对我心态的打击，受不了了，待了一个下午我便出来了，这学期的后半部分我基本上都是在伤心和迷茫中度过，家里有两个姐姐就是这次考研，我不知道我以后的路该怎么走，也没有让我想努力的人出现，这学期复习的很差，悲观者能复习的多好？期末成绩出来后，胆战心惊查成绩，还好没挂，除了概率论和离散数学全是60多，又一学期过去了，在这个学期的寒假我参加了我们学校的CSA的数据工程，没有学的？那就逼着自己学，让自己尽快走出悲痛，也是在这个寒假我重拾了LOLm，白天在电脑面前学习，晚上在峡谷练英雄，2月中旬我在S12赛季从黄金打到了大师，寒假彻底疯狂，不仅过了数据工程还过了工作室前端的中期考核，2月低开学，这短短几十行就来到了大二下，一眼望过去仿佛能看到毕业还有那迷茫的未来，开学没过多久，我之前参加考核的工作室找到了我，因为项目缺人，加上我之前的考核项目做的还可以，就问我愿不愿意来，这种事情我当然愿意呀，我就毫不犹豫的答应了，隔天另外一个工作室通过别人介绍也找到了我，当时我还不知道是工作室，以为是一个项目组，当时学姐告诉我第二天早上一起摸个底，摸个底？我当成普通话以为是一起去看看是什么项目，就这样我带着好奇心入睡了，第二天被闹钟吵醒，想起来要去项目摸底，打开手机一看，哪是什么项目摸底呀，是技术摸底，简称面试，我什么也没准备，还有十几分钟，只能硬着头皮上了，我还是第一个面试，回答的时候说的啃啃哇哇，40分钟过去，面试结束了，问的很基础吧，都按照自己的记忆答出来了，面试完回想起来原来摸底是重庆话，在重庆话的意思里面是了解水平，下午的时候收到负责人发的信息说我面试通过，随之发了一份工作室官网，这我才知道这个是工作室，就这样我在大二下加入了两个工作室，写到这里有点累了，加入工作室了后面的故事会在之后的博客里更新。</p>
 <p>​		在前端这条路上已经一年了，自己的技术也不知道是什么水平，面对前端和后端，我个人认为前端依旧是比较好学的，刚接触前端的时候认为前端就是把三件套学好，再学个框架就算学完了，但接触下来，发现我错了，在这个互联网的发展时代，前端语言也会更新迭代，在大二下学期我想过是考研还是就业又或者是去考编，好做规划，想过很久，目前的想法是就业，考研以后再说。</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Camila</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/07/13/%E9%82%A3%E6%97%B6%E7%9A%84%E6%88%91%EF%BC%8C%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA%EF%BC%8C%E4%B8%80%E8%B4%AB%E5%A6%82%E6%B4%97/">http://example.com/2024/07/13/%E9%82%A3%E6%97%B6%E7%9A%84%E6%88%91%EF%BC%8C%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA%EF%BC%8C%E4%B8%80%E8%B4%AB%E5%A6%82%E6%B4%97/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/07/13/hello-world/" title="Hello World"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">Hello World</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Camila</div><div class="author-info__description">Chongqing University of Posts and Telecommunications 2026 undergraduate student in computer science and technology, front-end enthusiast</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/13/%E9%82%A3%E6%97%B6%E7%9A%84%E6%88%91%EF%BC%8C%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA%EF%BC%8C%E4%B8%80%E8%B4%AB%E5%A6%82%E6%B4%97/" title="那时的我，海阔天空，一贫如洗">那时的我，海阔天空，一贫如洗</a><time datetime="2024-07-13T07:28:47.000Z" title="Created 2024-07-13 15:28:47">2024-07-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/13/hello-world/" title="Hello World">Hello World</a><time datetime="2024-07-13T06:55:42.630Z" title="Created 2024-07-13 14:55:42">2024-07-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Camila</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.14.0-b3"></script><script src="/js/main.js?v=4.14.0-b3"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.35/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
-  const runMermaid = (ele) => {
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Camila</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/07/13/%E9%82%A3%E6%97%B6%E7%9A%84%E6%88%91%EF%BC%8C%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA%EF%BC%8C%E4%B8%80%E8%B4%AB%E5%A6%82%E6%B4%97/">http://example.com/2024/07/13/%E9%82%A3%E6%97%B6%E7%9A%84%E6%88%91%EF%BC%8C%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA%EF%BC%8C%E4%B8%80%E8%B4%AB%E5%A6%82%E6%B4%97/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/07/13/hello-world/" title="Hello World"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">Hello World</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Camila</div><div class="author-info__description">Chongqing University of Posts and Telecommunications 2026 undergraduate student in computer science and technology, front-end enthusiast</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/13/%E9%82%A3%E6%97%B6%E7%9A%84%E6%88%91%EF%BC%8C%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA%EF%BC%8C%E4%B8%80%E8%B4%AB%E5%A6%82%E6%B4%97/" title="那时的我，海阔天空，一贫如洗">那时的我，海阔天空，一贫如洗</a><time datetime="2024-07-13T07:28:47.000Z" title="Created 2024-07-13 15:28:47">2024-07-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/13/hello-world/" title="Hello World">Hello World</a><time datetime="2024-07-13T06:55:42.630Z" title="Created 2024-07-13 14:55:42">2024-07-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Camila</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
     window.loadMermaid = true
     const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
 
-    Array.from(ele).forEach((item, index) => {
+    Array.from($mermaid).forEach((item, index) => {
       const mermaidSrc = item.firstElementChild
       const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
       const mermaidID = 'mermaid-' + index
@@ -203,28 +183,11 @@
     })
   }
 
-  const codeToMermaid = () => {
-    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
-    if (codeMermaidEle.length === 0) return
-    
-    codeMermaidEle.forEach(ele => {
-      const newEle = document.createElement('div')
-      newEle.className = 'mermaid-wrap'
-      newEle.innerHTML = `<pre class="mermaid-src" hidden>${ele.textContent}</pre>`
-      ele.parentNode.replaceWith(newEle)
-    })
-  }
-
   const loadMermaid = () => {
-    if (false) codeToMermaid()
-    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
-    if ($mermaid.length === 0) return
-
-    const runMermaidFn = () => runMermaid($mermaid)
-    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
-    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js').then(runMermaidFn)
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
   }
-  
-  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
   window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
-})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+})()</script></div><script type="text/javascript" src="F:/node_modules/hexo-theme-butterfly/source/js/fairyDustCursor.js"></script><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
