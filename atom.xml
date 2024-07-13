@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Camila&#39;s blog</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2024-07-13T11:08:54.984Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Camila</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>那时的我，海阔天空，一贫如洗</title>
+    <link href="http://example.com/2024/07/13/%E9%82%A3%E6%97%B6%E7%9A%84%E6%88%91%EF%BC%8C%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA%EF%BC%8C%E4%B8%80%E8%B4%AB%E5%A6%82%E6%B4%97/"/>
+    <id>http://example.com/2024/07/13/%E9%82%A3%E6%97%B6%E7%9A%84%E6%88%91%EF%BC%8C%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA%EF%BC%8C%E4%B8%80%E8%B4%AB%E5%A6%82%E6%B4%97/</id>
+    <published>2024-07-13T07:28:47.000Z</published>
+    <updated>2024-07-13T11:08:54.984Z</updated>
+    
+    <content type="html"><![CDATA[<p>​本人是重庆邮电大学2026届的计算机科学与技术在校本科生，现在大学生活已经过了两年了，我的大一生活过的滋润，和普通大学生一样享受着大学生活，认识很多朋友，被一个学姐带进了团学会，也就是学生会，有着一手的资源，而这些资源也让我快乐的度过了我大学以来学校所有的实验课，大一上学校安排了线性代数和高数还有C语言这几门专业课，每天都听不懂老师在讲什么，基本上都是看b站的宋浩老师才挺过来不挂科，给导员提交了入党申请，因为疫情，大一的考试除了高数，线性代数和英语等大一下开学再考其他的科目都是线上考试，线上考试有的人或许就会笑了，现在的我也是，但是当时的我不知道线上考试的水分，其他同学还在请外援，网上找答案的时候，我还在死扣代码，成绩出来后班里排中上，C语言也是我最开始接触的语言，还记得C语言的大作业，这可能是我大学四年最认真的，纯手搓的，这也是我最自豪的，就这样我的大一上结束了，转眼来到大一下，大一下的课程有python，高数下和大物，应该还有一些专业课我记不得了，反正能让我感受到难度一下子上升，尤其是高数，所以期末我就早早准备了，高数险些挂了，大一下专业分流，想过去最差的专业卷保研，或者去最好的专业当倒数，但是前者我不知道有多少人有这种想法，我不敢赌也赌不起，所以毫不犹豫的选择了学院最好的专业：计算机科学与技术，等着被卷，退则可就业，进则可考研，专业分流后重新分班，我知道这些都是排名前200的人（一共600多个人），可能卷不过他们，后面事实也是这样，大一上因为疫情原因，团学会那边没什么工作，疫情结束工作也就来了，大一下快结束时，团学会开始换届了，也是这个时候让我体验到了团学会的恶心，现在的领导都喜欢把功劳归到自己的身上，最终期末成绩出来了，没有挂科，反而排名进了很多，就这样我的大一下生活结束了，摆而美好着，而就在我以为我的大学四年都会这么顺利的时候，我的大二生活变了，机缘巧合之下选择了学习前端，加入了老师实验室，开始学习机器学习，并想着在毕业前发一篇论文，前端技术和机器学习一并学习着，看到这里你可能觉得没有什么不同，那么接下来就是压力倍增的时候，学期开学通过室友认识了一个女孩，开始没有怎么接触，随着上课接触的就多了，就互相了解了，因为她让我决定不再继续摆下去，也是因为她让我难过、悲伤、痛苦，让我变得很悲观，我和她的故事会在之后的博客里更新，在这里就不提了，大二上学习了数电，这也是我最头疼的一门课，数据结构，离散数学，概率论，大学物理接踵而来，课程难度再度升级，作为一个平时只会偶尔学习的我，这学期忙的焦头烂额，我把大部分时间给了我的课外学习，前端和机器学习依旧在我的学习计划中，我依然想起来我的数电实验期中考试实操最后是我的一个朋友帮我完成的，为了报答他，我后面都尽力的去帮助他，当然他还帮了我很多，时间一点一点流逝，转眼又快到了期末，这个期间也是考研的几天，悲观者无处可去，在考研的时机进到了考研的教室复习着什么都不会的科目，这无疑是对我心态的打击，受不了了，待了一个下午我便出来了，这学期的后半部分我基本上都是在伤心和迷茫中度过，家里有两个姐姐就是这次考研，我不知道我以后的路该怎么走，也没有让我想努力的人出现，这学期复习的很差，悲观者能复习的多好？期末成绩出来后，胆战心惊查成绩，还好没挂，除了概率论和离散数学全是60多，又一学期过去了，在这个学期的寒假我参加了我们学校的CSA的数据工程，没有学的？那就逼着自己学，让自己尽快走出悲痛，也是在这个寒假我重拾了LOLm，白天在电脑面前学习，晚上在峡谷练英雄，2月中旬我在S12赛季从黄金打到了大师，寒假彻底疯狂，不仅过了数据工程还过了工作室前端的中期考核，2月低开学，这短短几十行就来到了大二下，一眼望过去仿佛能看到毕业还有那迷茫的未来，开学没过多久，我之前参加考核的工作室找到了我，因为项目缺人，加上我之前的考核项目做的还可以，就问我愿不愿意来，这种事情我当然愿意呀，我就毫不犹豫的答应了，隔天另外一个工作室通过别人介绍也找到了我，当时我还不知道是工作室，以为是一个项目组，当时学姐告诉我第二天早上一起摸个底，摸个底？我当成普通话以为是一起去看看是什么项目，就这样我带着好奇心入睡了，第二天被闹钟吵醒，想起来要去项目摸底，打开手机一看，哪是什么项目摸底呀，是技术摸底，简称面试，我什么也没准备，还有十几分钟，只能硬着头皮上了，我还是第一个面试，回答的时候说的啃啃哇哇，40分钟过去，面试结束了，问的很基础吧，都按照自己的记忆答出来了，面试完回想起来原来摸底是重庆话，在重庆话的意思里面是了解水平，下午的时候收到负责人发的信息说我面试通过，随之发了一份工作室官网，这我才知道这个是工作室，就这样我在大二下加入了两个工作室，写到这里有点累了，加入工作室了后面的故事会在之后的博客里更新。</p><p>​在前端这条路上已经一年了，自己的技术也不知道是什么水平，面对前端和后端，我个人认为前端依旧是比较好学的，刚接触前端的时候认为前端就是把三件套学好，再学个框架就算学完了，但接触下来，发现我错了，在这个互联网的发展时代，前端语言也会更新迭代，在大二下学期我想过是考研还是就业又或者是去考编，好做规划，想过很久，目前的想法是就业，考研以后再说。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;​		本人是重庆邮电大学2026届的计算机科学与技术在校本科生，现在大学生活已经过了两年了，我的大一生活过的滋润，和普通大学生一样享受着大学生活，认识很多朋友，被一个学姐带进了团学会，也就是学生会，有着一手的资源，而这些资源也让我快乐的度过了我大学以来学校所有的实验课，大一</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2024/07/13/hello-world/"/>
+    <id>http://example.com/2024/07/13/hello-world/</id>
+    <published>2024-07-13T06:55:42.630Z</published>
+    <updated>2024-07-13T06:49:49.710Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
