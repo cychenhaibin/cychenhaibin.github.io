@@ -6,7 +6,7 @@
   <link href="http://cychenhaibin.github.io/atom.xml" rel="self"/>
   
   <link href="http://cychenhaibin.github.io/"/>
-  <updated>2024-07-19T05:49:57.919Z</updated>
+  <updated>2024-07-19T07:27:05.198Z</updated>
   <id>http://cychenhaibin.github.io/</id>
   
   <author>
@@ -17,18 +17,18 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>解决nodeJs操作数据库报错ER_NOT_SUPPORTED_AUTH_MODE，并且提示Client does not support authentication protocol requested by server; consider upgrading MySQL client：客户端不支持服务器请求的身份验证协议；考虑升级MySQL客户端；</title>
+    <title>nodeJs操作数据库报错</title>
     <link href="http://cychenhaibin.github.io/2024/07/19/nodeJs%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0/"/>
     <id>http://cychenhaibin.github.io/2024/07/19/nodeJs%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0/</id>
     <published>2024-07-19T05:48:47.000Z</published>
-    <updated>2024-07-19T05:49:57.919Z</updated>
+    <updated>2024-07-19T07:27:05.198Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因"></a>报错原因</h2><p>最新的MySQL模块并未完全支持MySQL 8.0的<code>caching_sha2_password</code>加密方式，而MySQL 8.0中默认仍然是<code>caching_sha2_password</code>加密方式，因此用户认证不通过了。</p><p><img src="/../image/nodeJs%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0/image-20240719134649437.png" alt="image-20240719134649437"></p><p>如下查询：</p><p><img src="/../image/nodeJs%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0/image-20240719134605279.png" alt="image-20240719134605279"></p><p>这里的“123456”是你自己的密码</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>直接数据库工具里面修改加密方式mysql_native_password：</p><p><img src="/../image/nodeJs%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0/image-20240719134726725.png" alt="image-20240719134726725"></p><p>或者通过指令方式修改：</p><p><img src="/../image/nodeJs%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0/image-20240719134754341.png" alt="image-20240719134754341"></p>]]></content>
+    <content type="html"><![CDATA[<p>解决nodeJs操作数据库报错<code>ER_NOT_SUPPORTED_AUTH_MODE</code>，并且提示<code>Client does not support authentication protocol requested by server; consider upgrading MySQL client</code>：客户端不支持服务器请求的身份验证协议；考虑升级MySQL客户端；</p><h2 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因"></a>报错原因</h2><p>最新的MySQL模块并未完全支持MySQL 8.0的<code>caching_sha2_password</code>加密方式，而MySQL 8.0中默认仍然是<code>caching_sha2_password</code>加密方式，因此用户认证不通过了。</p><p><img src="/../image/nodeJs%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0/image-20240719134649437.png" alt="image-20240719134649437"></p><p>如下查询：</p><p><img src="/../image/nodeJs%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0/image-20240719134605279.png" alt="image-20240719134605279"></p><p>这里的“123456”是你自己的密码</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>直接数据库工具里面修改加密方式mysql_native_password：</p><p><img src="/../image/nodeJs%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0/image-20240719134726725.png" alt="image-20240719134726725"></p><p>或者通过指令方式修改：</p><p><img src="/../image/nodeJs%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0/image-20240719134754341.png" alt="image-20240719134754341"></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;报错原因&quot;&gt;&lt;a href=&quot;#报错原因&quot; class=&quot;headerlink&quot; title=&quot;报错原因&quot;&gt;&lt;/a&gt;报错原因&lt;/h2&gt;&lt;p&gt;最新的MySQL模块并未完全支持MySQL 8.0的&lt;code&gt;caching_sha2_password&lt;/code&gt;加密</summary>
+    <summary type="html">&lt;p&gt;解决nodeJs操作数据库报错&lt;code&gt;ER_NOT_SUPPORTED_AUTH_MODE&lt;/code&gt;，并且提示&lt;code&gt;Client does not support authentication protocol requested by server; con</summary>
       
     
     
