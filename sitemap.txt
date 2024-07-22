@@ -1,3 +1,6 @@
+http://cychenhaibin.github.io/2024/07/23/ES6/
+http://cychenhaibin.github.io/2024/07/22/Webpack/
+http://cychenhaibin.github.io/2024/07/21/Git/
 http://cychenhaibin.github.io/2024/07/19/nodeJs%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0/
 http://cychenhaibin.github.io/2024/07/19/nodeJs/
 http://cychenhaibin.github.io/2024/07/15/App/
