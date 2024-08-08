@@ -1,0 +1,1097 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Vue | Camila's blog</title><meta name="author" content="Camila"><meta name="copyright" content="Camila"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本文件已定稿，最后修改时间 20240723 01:56  一、Vue脚手架vue-cli：框架  —-&gt; 脚手架  安装 全局安装npm install -g @vue&#x2F;cli  测试安装是否成功vue -V   安装老版本vue-clinpm install -g vue-cli  安装指定版本npm install -g vue-cli@版本号  查看全部版本npm view vue-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue">
+<meta property="og:url" content="http://cychenhaibin.github.io/2024/07/23/Vue/index.html">
+<meta property="og:site_name" content="Camila&#39;s blog">
+<meta property="og:description" content="本文件已定稿，最后修改时间 20240723 01:56  一、Vue脚手架vue-cli：框架  —-&gt; 脚手架  安装 全局安装npm install -g @vue&#x2F;cli  测试安装是否成功vue -V   安装老版本vue-clinpm install -g vue-cli  安装指定版本npm install -g vue-cli@版本号  查看全部版本npm view vue-">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://cychenhaibin.github.io/img/loading.gif">
+<meta property="article:published_time" content="2024-07-22T17:56:47.000Z">
+<meta property="article:modified_time" content="2024-08-08T16:19:42.606Z">
+<meta property="article:author" content="Camila">
+<meta property="article:tag" content="Front-end">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cychenhaibin.github.io/img/loading.gif"><link rel="shortcut icon" href="/img/loading.gif"><link rel="canonical" href="http://cychenhaibin.github.io/2024/07/23/Vue/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-center"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Vue',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-09 00:19:42'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><script src="https://npm.elemecdn.com/echarts@4.7.0/dist/echarts.min.js"></script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Camila's blog" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/loading.gif" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/Screenshot_2024-07-10.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Camila's blog"><span class="site-name">Camila's blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Vue</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-22T17:56:47.000Z" title="发表于 2024-07-23 01:56:47">2024-07-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-08T16:19:42.606Z" title="更新于 2024-08-09 00:19:42">2024-08-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Front-end/">Front-end</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Vue"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2024/07/23/Vue/#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>本文件已定稿，最后修改时间 20240723 01:56</p>
+<hr>
+<h2 id="一、Vue脚手架"><a href="#一、Vue脚手架" class="headerlink" title="一、Vue脚手架"></a>一、Vue脚手架</h2><p>vue-cli：框架  —-&gt; 脚手架</p>
+<ol>
+<li><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
+<li><h4 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h4><p><code>npm install -g @vue/cli</code></p>
+</li>
+<li><h4 id="测试安装是否成功"><a href="#测试安装是否成功" class="headerlink" title="测试安装是否成功"></a>测试安装是否成功</h4><p><code>vue -V </code></p>
+</li>
+<li><h4 id="安装老版本vue-cli"><a href="#安装老版本vue-cli" class="headerlink" title="安装老版本vue-cli"></a>安装老版本vue-cli</h4><p><code>npm install -g vue-cli</code></p>
+</li>
+<li><h4 id="安装指定版本"><a href="#安装指定版本" class="headerlink" title="安装指定版本"></a>安装指定版本</h4><p><code>npm install -g vue-cli@版本号</code></p>
+</li>
+<li><h4 id="查看全部版本"><a href="#查看全部版本" class="headerlink" title="查看全部版本"></a>查看全部版本</h4><p><code>npm view vue-cli versions --json</code></p>
+</li>
+<li><h4 id="下载项目"><a href="#下载项目" class="headerlink" title="下载项目"></a>下载项目</h4><p><code>vue init webpack 项目名称</code></p>
+</li>
+</ol>
+</li>
+<li><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p><code>vue create 项目名称</code></p>
+</li>
+<li><h3 id="vue文件"><a href="#vue文件" class="headerlink" title=".vue文件"></a>.vue文件</h3><p>三大部分：</p>
+<p>template：盒子布局的<br>script：js逻辑<br>style：css样式</p>
+</li>
+<li><h4 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h4><p>只要运行vue项目，main.js就会执行</p>
+<p>index.html —&gt; main.js —&gt; App.vue</p>
+</li>
+<li><h4 id="vue是”数据”驱动"><a href="#vue是”数据”驱动" class="headerlink" title="vue是”数据”驱动"></a>vue是”数据”驱动</h4><p>定义数据：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">        return&#123;</span><br><span class="line">            str:&#x27;123&#x27;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><h4 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">    	&lt;h1&gt;&#123;&#123; str &#125;&#125;&lt;/h1&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="二、Vue指令"><a href="#二、Vue指令" class="headerlink" title="二、Vue指令"></a>二、Vue指令</h2><ol>
+<li><h4 id="指令（v-xxx）"><a href="#指令（v-xxx）" class="headerlink" title="指令（v-xxx）"></a>指令（v-xxx）</h4><p><code>v-bind</code>：单向绑定</p>
+<p><code>v-bind:属性名=&#39;数据&#39;</code></p>
+<p>简写：</p>
+<p><code>:属性名=&#39;数据&#39;</code></p>
+<p><strong>指令不需要加入{{}}</strong></p>
+</li>
+<li><h4 id="列表渲染和条件渲染"><a href="#列表渲染和条件渲染" class="headerlink" title="列表渲染和条件渲染"></a>列表渲染和条件渲染</h4><ol>
+<li><p>列表渲染（v-for）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li v-for=&#x27;(item,index) in arr&#x27; :key=&#x27;index&#x27;&gt;</span><br><span class="line">    			&#123;&#123; item &#125;&#125;</span><br><span class="line">                &#123;&#123; index &#125;&#125;</span><br><span class="line">    		&lt;/li&gt;</span><br><span class="line">    	&lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>条件渲染（v-if）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;h1 v-if=&#x27;types==&quot;张三&quot;&#x27;&gt;</span><br><span class="line">    11111</span><br><span class="line">&lt;/h1&gt;</span><br><span class="line">&lt;h1 v-else-if=&#x27;types==&quot;李四&quot;&#x27;&gt;</span><br><span class="line">    22222</span><br><span class="line">&lt;/h1&gt;</span><br><span class="line">&lt;h1 v-else&gt;</span><br><span class="line">    33333</span><br><span class="line">&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>事件添加</p>
+<p><code>&lt;h1 v-on:click=&#39;方法&#39;&gt;&lt;/h1&gt;</code></p>
+<p>简写：</p>
+<p><code>&lt;h1 @click=&#39;方法&#39;&gt;&lt;/h1&gt;</code></p>
+<p>注意：vue-cli中的方法要添加在methods</p>
+</li>
+</ol>
+<p><strong>【面试题】v-if 和 v-for 的优先级</strong></p>
+<ul>
+<li><p>v-for比v-if高</p>
+</li>
+<li><p>正常的使用上来说</p>
+<ul>
+<li><p>v-if</p>
+</li>
+<li><p>​	v-for</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="v-if和v-show的区别"><a href="#v-if和v-show的区别" class="headerlink" title="v-if和v-show的区别"></a>v-if和v-show的区别</h4><ol>
+<li><p><code>v-if</code></p>
+<p>创建与删除的操作</p>
+</li>
+<li><p><code>v-show</code></p>
+<p>显示和隐藏（<code>display:none;、display:block;</code>）</p>
+</li>
+</ol>
+<p><strong>【面试题】两者区别</strong></p>
+<ul>
+<li><p>v-if 是创建和删除节点、v-show 是隐藏和显示节点</p>
+</li>
+<li><p>如果用户频繁切换的状态应该用v-show</p>
+</li>
+<li><p>如果一刷新进入页面的状态v-show的性能差一点</p>
+</li>
+</ul>
+</li>
+<li><h4 id="v-model的使用"><a href="#v-model的使用" class="headerlink" title="v-model的使用"></a>v-model的使用</h4><ul>
+<li><p><code>v-bind</code>：单向绑定</p>
+</li>
+<li><p><code>v-model</code>：双向绑定</p>
+</li>
+</ul>
+</li>
+<li><h4 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h4><p>模板语法内如果添加特别复杂的逻辑，就让模板表达式比较重而且难以维护，对于任何复杂逻辑，都应当使用计算属性</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      str:&#x27;123&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed:&#123;</span><br><span class="line">     changeStr()&#123;</span><br><span class="line">       return this.str.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>计算属性（computed）是基于他们的响应式依赖进行缓存的</strong></p>
+<ul>
+<li><strong>【面试题】computed 和 methods 区别</strong><ul>
+<li>computed是有缓存的（如果计算的属性没有发生变化，则执行缓存数据）</li>
+<li>methods是没有缓存的（也就是template只要render了 [或者重复render] 就会执行methods内所有的方法）</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">      &lt;!-- &#123;&#123;  changeStr  &#125;&#125; --&gt;</span><br><span class="line">      单价：</span><br><span class="line">      &lt;input type=&quot;&quot; name=&quot;&quot; v-model=&#x27;price&#x27;&gt; </span><br><span class="line">      数量：</span><br><span class="line">      &lt;input type=&quot;&quot; name=&quot;&quot; v-model=&#x27;num&#x27;&gt; </span><br><span class="line">      总价：&#123;&#123;  total  &#125;&#125;</span><br><span class="line">      &lt;hr /&gt;</span><br><span class="line">      &#123;&#123; str &#125;&#125;</span><br><span class="line">      &lt;button @click=&#x27;btn&#x27;&gt;按钮&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;App&#x27;,</span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      //str:&#x27;123&#x27;</span><br><span class="line">      price:&#x27;11&#x27;,</span><br><span class="line">      num:2,</span><br><span class="line">      str:&#x27;你好&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed:&#123;</span><br><span class="line">    total()&#123;</span><br><span class="line">      console.log(&#x27;computed&#x27;);</span><br><span class="line">      return this.price * this.num;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">    btn()&#123;</span><br><span class="line">      this.str = &#x27;不好&#x27;;</span><br><span class="line">    &#125;,</span><br><span class="line">    totalConut()&#123;</span><br><span class="line">      console.log( &#x27;methods&#x27; );</span><br><span class="line">      return this.price * this.num;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  // computed:&#123;</span><br><span class="line">  //   changeStr()&#123;</span><br><span class="line">  //     return this.str.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;);</span><br><span class="line">  //   &#125;</span><br><span class="line">  // &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><h4 id="class和style"><a href="#class和style" class="headerlink" title="class和style"></a>class和style</h4><ol>
+<li><h5 id="class"><a href="#class" class="headerlink" title="class"></a>class</h5><ol>
+<li><p>对象的写法</p>
+<p><code>:class=&#39;&#123; class名称:true|false &#125;&#39;</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li v-for=&#x27;(item,index) in list&#x27; :key=&#x27;index&#x27; :class=&#x27;&#123;active:false&#125;&#x27;&gt;</span><br><span class="line">    			&#123;&#123; item &#125;&#125;</span><br><span class="line">    		&lt;/li&gt;</span><br><span class="line">   		&lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name:&#x27;App&#x27;,</span><br><span class="line">    data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            list:[&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .active&#123;</span><br><span class="line">        background:red;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>用于判断各种赋值的</p>
+<p><code>:class=&#39; currentClass == index ? &quot;active&quot; : &quot;&quot; &#39;</code></p>
+<p>点击某一个加上颜色</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li v-for=&#x27;(item,index) in list&#x27; :key=&#x27;index&#x27; </span><br><span class="line">            	:class=&#x27; currentClass == index ? &quot;active&quot; : &quot;&quot; &#x27;</span><br><span class="line">            	@click=&#x27;btn(index)&#x27;&gt;</span><br><span class="line">    			&#123;&#123; item &#125;&#125;</span><br><span class="line">    		&lt;/li&gt;</span><br><span class="line">    	&lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name:&#x27;App&#x27;,</span><br><span class="line">    data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            list:[&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;],</span><br><span class="line">            currentClass:0</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">        btn(index)&#123;</span><br><span class="line">            this.currentClass = index;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .active&#123;</span><br><span class="line">        background:red;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>数组的写法</p>
+<p><code>&lt;div :class=&#39;[activeClass]&#39;&gt;&lt;/div&gt;</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li v-for=&#x27;(item,index) in list&#x27; :key=&#x27;index&#x27; </span><br><span class="line">            	:class=&#x27; currentClass == index ? &quot;active&quot; : &quot;&quot; &#x27;</span><br><span class="line">            	@click=&#x27;btn(index)&#x27;&gt;</span><br><span class="line">    			&#123;&#123; item &#125;&#125;</span><br><span class="line">    		&lt;/li&gt;</span><br><span class="line">    	&lt;/ul&gt;</span><br><span class="line">        &lt;div :class=&#x27;[activeClass]&#x27;&gt;</span><br><span class="line">            aaa</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name:&#x27;App&#x27;,</span><br><span class="line">    data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            list:[&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;],</span><br><span class="line">            currentClass:0,</span><br><span class="line">            activeClass:&quot;active&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">        btn(index)&#123;</span><br><span class="line">            this.currentClass = index;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .active&#123;</span><br><span class="line">        background:red;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><h5 id="style"><a href="#style" class="headerlink" title="style"></a>style</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li v-for=&#x27;(item,index) in list&#x27; :key=&#x27;index&#x27; </span><br><span class="line">            	:class=&#x27; currentClass == index ? &quot;active&quot; : &quot;&quot; &#x27;</span><br><span class="line">            	@click=&#x27;btn(index)&#x27;&gt;</span><br><span class="line">    			&#123;&#123; item &#125;&#125;</span><br><span class="line">    		&lt;/li&gt;</span><br><span class="line">    	&lt;/ul&gt;</span><br><span class="line">        &lt;div :class=&#x27;[activeClass]&#x27;&gt;</span><br><span class="line">            aaa</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div :style=&#x27;styleClass&#x27;&gt;</span><br><span class="line">            这是style的写法</span><br><span class="line">    	&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name:&#x27;App&#x27;,</span><br><span class="line">    data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            list:[&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;],</span><br><span class="line">            currentClass:0,</span><br><span class="line">            activeClass:&quot;active&quot;,</span><br><span class="line">            styleClass:&#123;</span><br><span class="line">            	background:&#x27;red&#x27;,</span><br><span class="line">            	fontSize:&#x27;50px&#x27;</span><br><span class="line">        	&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">        btn(index)&#123;</span><br><span class="line">            this.currentClass = index;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .active&#123;</span><br><span class="line">        background:red;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><h4 id="img的src路径问题"><a href="#img的src路径问题" class="headerlink" title="img的src路径问题"></a>img的src路径问题</h4><p><code>img :src</code> 一旦是绑定的数据，那么他会类似于请求的数据了，需要从路径上查找</p>
+<ul>
+<li><p>没有绑定在src目录下找</p>
+<p><code>&lt;img src=&quot;./assets/img/log0.png&quot;&gt;</code></p>
+</li>
+<li><p>绑定了在public目录下找</p>
+<p><code>&lt;img :src=&quot;&quot;&gt;</code></p>
+</li>
+</ul>
+</li>
+<li><h4 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h4><ol>
+<li><h5 id="监听事件"><a href="#监听事件" class="headerlink" title="监听事件"></a>监听事件</h5><p><code>v-on:事件名称=&#39;&#39;</code></p>
+<p>简写：</p>
+<p><code>@事件名称=&#39;&#39;</code></p>
+</li>
+<li><h5 id="vue中的事件-—-和dom事件一致"><a href="#vue中的事件-—-和dom事件一致" class="headerlink" title="vue中的事件 —- 和dom事件一致"></a>vue中的事件 —- 和dom事件一致</h5><p>click、mouseover</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">      </span><br><span class="line">      &lt;div class=&#x27;main&#x27; @click=&#x27;btn($event,&quot;你好&quot;)&#x27; &gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">      &lt;div class=&#x27;main&#x27; @mouseover=&#x27;overBtn&#x27; @mouseout=&#x27;outBtn&#x27;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">      &lt;input type=&quot;&quot; name=&quot;&quot; @keyup.enter=&#x27;upBtn&#x27;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;App&#x27;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">    btn( e,val )&#123;</span><br><span class="line">      console.log(e,val);</span><br><span class="line">    &#125;,</span><br><span class="line">    overBtn()&#123;</span><br><span class="line">      alert(&#x27;移入&#x27;);</span><br><span class="line">    &#125;,</span><br><span class="line">    outBtn()&#123;</span><br><span class="line">      alert(&#x27;移出&#x27;);</span><br><span class="line">    &#125;,</span><br><span class="line">    upBtn()&#123;</span><br><span class="line">      alert(&#x27;111111&#x27;);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">.container&#123;</span><br><span class="line">  width: 500px;</span><br><span class="line">  height: 500px;</span><br><span class="line">  background: blue;</span><br><span class="line">&#125;</span><br><span class="line">.main&#123;</span><br><span class="line">  margin: 10px;</span><br><span class="line">  width: 300px;</span><br><span class="line">  height: 300px;</span><br><span class="line">  background: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><h5 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h5><p>.stop、.prevent、.capture、.self、.once、.passive</p>
+<p><code>&lt;input type=&quot;&quot; name=&quot;&quot; @keyup.enter=&#39;upBtn&#39;&gt;</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">      </span><br><span class="line">      &lt;div class=&#x27;main&#x27; @click=&#x27;btn($event,&quot;你好&quot;)&#x27; &gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">      &lt;div class=&#x27;main&#x27; @mouseover=&#x27;overBtn&#x27; @mouseout=&#x27;outBtn&#x27;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">      &lt;input type=&quot;&quot; name=&quot;&quot; @keyup.enter=&#x27;upBtn&#x27;&gt;</span><br><span class="line"></span><br><span class="line">      &lt;div class=&#x27;container&#x27; @click=&#x27;parentNode&#x27;&gt;</span><br><span class="line">        &lt;div class=&#x27;main&#x27; @click.stop=&#x27;childNode&#x27;&gt;&lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;App&#x27;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">    btn( e,val )&#123;</span><br><span class="line">      console.log(e,val);</span><br><span class="line">    &#125;,</span><br><span class="line">    overBtn()&#123;</span><br><span class="line">      alert(&#x27;移入&#x27;);</span><br><span class="line">    &#125;,</span><br><span class="line">    outBtn()&#123;</span><br><span class="line">      alert(&#x27;移出&#x27;);</span><br><span class="line">    &#125;,</span><br><span class="line">    upBtn()&#123;</span><br><span class="line">      alert(&#x27;111111&#x27;);</span><br><span class="line">    &#125;,</span><br><span class="line">    parentNode()&#123;</span><br><span class="line">      alert(&#x27;父&#x27;);</span><br><span class="line">    &#125;,</span><br><span class="line">    childNode()&#123;</span><br><span class="line">      alert(&#x27;子&#x27;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">.container&#123;</span><br><span class="line">  width: 500px;</span><br><span class="line">  height: 500px;</span><br><span class="line">  background: blue;</span><br><span class="line">&#125;</span><br><span class="line">.main&#123;</span><br><span class="line">  margin: 10px;</span><br><span class="line">  width: 300px;</span><br><span class="line">  height: 300px;</span><br><span class="line">  background: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><h4 id="Vue项目做自适应"><a href="#Vue项目做自适应" class="headerlink" title="Vue项目做自适应"></a>Vue项目做自适应</h4><ul>
+<li><p>局部引入（单独某一页面生效）.vue文件中引入</p>
+</li>
+<li><p>在main.js中全局引入   <code>import &#39;./assets/js/flexible.js&#39;</code></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="三、Vue组件"><a href="#三、Vue组件" class="headerlink" title="三、Vue组件"></a>三、Vue组件</h2><ol>
+<li><h4 id="什么是组件"><a href="#什么是组件" class="headerlink" title="什么是组件"></a>什么是组件</h4><p>把较大的网页，进行功能模块的拆分</p>
+<ol>
+<li><h5 id="组件的操作"><a href="#组件的操作" class="headerlink" title="组件的操作"></a>组件的操作</h5><p>组件的首字母要大写</p>
+<p>父组件引入子组件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;Header&gt;&lt;/Header&gt;</span><br><span class="line">        &lt;Swiper&gt;&lt;/Swiper&gt;</span><br><span class="line">        &lt;Icons&gt;&lt;/Icons&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Header from &#x27;./components/Header&#x27;</span><br><span class="line">import Swiper from &#x27;./components/Swiper&#x27;</span><br><span class="line">import Icons from &#x27;./components/Icons&#x27;</span><br><span class="line">export default &#123;</span><br><span class="line">    name:&#x27;App&#x27;,</span><br><span class="line">    components:&#123;</span><br><span class="line">        Header,</span><br><span class="line">        Swiper,</span><br><span class="line">        Icons</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><h4 id="父组件传值给子组件"><a href="#父组件传值给子组件" class="headerlink" title="父组件传值给子组件"></a>父组件传值给子组件</h4><ul>
+<li><p>父组件</p>
+<p><code>&lt;Swiper :xxx=&#39;parentStr&#39;&gt;&lt;/Swiper&gt;</code></p>
+<p>xxx 是一个名称 &#x3D; ‘ 这里是属性值 ‘</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">import Swiper from &#x27;./components/Swiper.vue&#x27;</span><br><span class="line">export default &#123;</span><br><span class="line">	name:&#x27;App&#x27;,</span><br><span class="line">	data()&#123;</span><br><span class="line">		return &#123;</span><br><span class="line">			parentStr:&#x27;这是父组件的数据&#x27;,</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	components:&#123;</span><br><span class="line">		Swiper</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>子组件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">        &#123;&#123; xxx &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">	props:[&#x27;xxx&#x27;],</span><br><span class="line">&#125;</span><br><span class="line">-----------------</span><br><span class="line">export default &#123;</span><br><span class="line">	props:&#123;</span><br><span class="line">		xxx:String,</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h4 id="子组件传值给父组件"><a href="#子组件传值给父组件" class="headerlink" title="子组件传值给父组件"></a>子组件传值给父组件</h4><ul>
+<li><p>父组件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">        &lt;Child @changeEvent=&#x27;fn&#x27;&gt;&lt;/Child&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Child from &#x27;./components/Child&#x27;</span><br><span class="line">export default &#123;</span><br><span class="line">    name:&#x27;App&#x27;,</span><br><span class="line">    components:&#123;</span><br><span class="line">        Child</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">        fn(val)&#123;</span><br><span class="line">            alert(val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>子组件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">        子组件:&#123;&#123; str &#125;&#125;</span><br><span class="line">        &lt;button @click=&#x27;btn&#x27;&gt;按钮&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            str:&#x27;这是子组件的数据&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">        btn()&#123;</span><br><span class="line">            // changeEvent自定义事件名称</span><br><span class="line">            this.$emit(&#x27;changeEvent&#x27;,this.str);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h4 id="兄弟组件之间的传值（bus）"><a href="#兄弟组件之间的传值（bus）" class="headerlink" title="兄弟组件之间的传值（bus）"></a>兄弟组件之间的传值（bus）</h4><ul>
+<li><p>bus.js</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Vue</span> <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> <span class="title class_">Vue</span>;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>A.vue</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">        AAA</span><br><span class="line">        &lt;button @click=&#x27;btn&#x27;&gt;这是A的按钮&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import bus from &#x27;./bus&#x27;</span><br><span class="line">export default &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            aStr:&#x27;这是A的数据&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">        btn()&#123;</span><br><span class="line">            bus.$emit(&#x27;changeStr&#x27;,this.aStr);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+</li>
+<li><p>B.vue</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">        BBB</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import bus from &#x27;./bus&#x27;</span><br><span class="line">export default&#123;</span><br><span class="line">    computed:&#123;</span><br><span class="line">        bStr()&#123;</span><br><span class="line">            bus.$on(&quot;changeStr&quot;,(res)=&gt;&#123;</span><br><span class="line">                alert(res);</span><br><span class="line">            &#125;)</span><br><span class="line">            return 111;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h4 id="scoped以及原理"><a href="#scoped以及原理" class="headerlink" title="scoped以及原理"></a>scoped以及原理</h4><ol>
+<li><p>组件内样式局部化：</p>
+<p><code>&lt;style scoped&gt;&lt;/style&gt;</code></p>
+</li>
+<li><p>原理</p>
+<p>加入了scoped，就会在节点上添加自定义属性 <code>data-v-xxx</code></p>
+<p>css选择器，根据属性选择最终添加样式</p>
+</li>
+</ol>
+</li>
+<li><h4 id="slot使用以及场景"><a href="#slot使用以及场景" class="headerlink" title="slot使用以及场景"></a>slot使用以及场景</h4><p>Header.vue</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">slot</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        &#123;&#123; title &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>App.vue</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Header</span> <span class="attr">title</span>=<span class="string">&#x27;分类&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">Header</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Header</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Header</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用场景：</p>
+<p><img src="/../image/Vue/image-20240725160914310.png" alt="image-20240725160914310"></p>
+<p><img src="/../image/Vue/image-20240725160946389.png" alt="image-20240725160946389"></p>
+</li>
+<li><h4 id="Vue插件的使用（swiper插件为例）"><a href="#Vue插件的使用（swiper插件为例）" class="headerlink" title="Vue插件的使用（swiper插件为例）"></a>Vue插件的使用（swiper插件为例）</h4><ol>
+<li><p>下载</p>
+<p><code>npm install vue-awesome-swiper -S</code></p>
+</li>
+<li><p>引入</p>
+<ul>
+<li><p>全局引入在main.js</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">VueAwesomeSwiper</span> <span class="keyword">from</span> <span class="string">&#x27;vue-awesome-swiper&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;swiper/dist/css/swiper.css&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Vue</span>.<span class="title function_">use</span>(<span class="title class_">VueAwesomeSwiper</span>)</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>局部按需引入：单组件引入</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;swiper/dist/css/swiper.css&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; swiper, swiperSlide &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-awesome-swiper&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">	<span class="attr">components</span>:&#123;</span><br><span class="line">		swiper,</span><br><span class="line">		swiperSlide</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>配置</p>
+<p>相关文档</p>
+</li>
+</ol>
+</li>
+<li><h4 id="样式穿透"><a href="#样式穿透" class="headerlink" title="样式穿透"></a>样式穿透</h4><ol>
+<li><p>通用（在选择器前面加入）：<code>::v-deep</code></p>
+</li>
+<li><p>stylus：<code>&gt;&gt;&gt;</code></p>
+</li>
+<li><p>sass和less：<code>/deep/</code></p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="四、生命周期和接口请求"><a href="#四、生命周期和接口请求" class="headerlink" title="四、生命周期和接口请求"></a>四、生命周期和接口请求</h2><ol>
+<li><h4 id="Vue生命周期"><a href="#Vue生命周期" class="headerlink" title="Vue生命周期"></a>Vue生命周期</h4><ol>
+<li><p>是什么？</p>
+<p>vue中每一个组件都是独立的，每一个组件都有自己的生命周期，从一个组件创建、数据初始化、挂载、更新、销毁</p>
+</li>
+<li><p>有哪些？</p>
+<p>beforeCreate、created</p>
+<p>beforeMount、mounted</p>
+<p>beforeUpdate、updated</p>
+<p>beforeDestroy、destroyed</p>
+</li>
+<li><p>打开一个组件会执行哪些生命周期</p>
+<p>beforeCreate、created</p>
+<p>beforeMount、mounted</p>
+<p><strong><code>this.$data</code>：组件的data数据 、created时有</strong></p>
+<p><strong><code>this.$el</code>：组件的template节点、mounted时有</strong></p>
+</li>
+</ol>
+</li>
+<li><h4 id="axios和代理配置"><a href="#axios和代理配置" class="headerlink" title="axios和代理配置"></a>axios和代理配置</h4><p>vue项目中axios进行接口的请求</p>
+<ol>
+<li><p>下载</p>
+<p><code>npm install axios -S</code></p>
+</li>
+<li><p>引入</p>
+<p>在main.js中</p>
+<p><code>import axios from &#39;axios&#39;</code></p>
+<p><code>Vue.prototype.axios = axios;</code></p>
+</li>
+<li><p>使用</p>
+<ul>
+<li><p>GET</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li v-for=&#x27;(item,index) in list&#x27; :key=&#x27;index&#x27;&gt;</span><br><span class="line">    			&#123;&#123; item.name &#125;&#125;</span><br><span class="line">                &lt;img :src=&quot;item.mgurl&quot;&gt;</span><br><span class="line">    		&lt;/li&gt;</span><br><span class="line">    	&lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name:&#x27;App&#x27;,</span><br><span class="line">    data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            list:[]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    components:&#123;</span><br><span class="line">        HelloWorld</span><br><span class="line">    &#125;,</span><br><span class="line">    created()&#123;</span><br><span class="line">        this.axios(&#123;</span><br><span class="line">            url:&#x27;xxx&#x27;,</span><br><span class="line">            params:&#123;</span><br><span class="line">                page:1,</span><br><span class="line">                size:3</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).then(res=&gt;&#123;</span><br><span class="line">            this.list = res.data.data</span><br><span class="line">            // console.log(res.data.data);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>POST</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li v-for=&#x27;(item,index) in list&#x27; :key=&#x27;index&#x27;&gt;</span><br><span class="line">    			&#123;&#123; item.name &#125;&#125;</span><br><span class="line">                &lt;img :src=&quot;item.mgurl&quot;&gt;</span><br><span class="line">    		&lt;/li&gt;</span><br><span class="line">    	&lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name:&#x27;App&#x27;,</span><br><span class="line">    data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            list:[]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    components:&#123;</span><br><span class="line">        HelloWorld</span><br><span class="line">    &#125;,</span><br><span class="line">    created()&#123;</span><br><span class="line">        this.axios(&#123;</span><br><span class="line">            url:&#x27;xxx&#x27;,</span><br><span class="line">            method:&quot;POST&quot;,</span><br><span class="line">            data:&#123;</span><br><span class="line">                page:1,</span><br><span class="line">                size:3</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).then(res=&gt;&#123;</span><br><span class="line">            this.list = res.data.data</span><br><span class="line">            // console.log(res.data.data);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>vue项目在开发阶段设置代理</p>
+<ol>
+<li><p>项目根目录需要新建vue.config.js</p>
+</li>
+<li><p>配置代理</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">devServer</span>:&#123;</span><br><span class="line">        <span class="attr">proxy</span>:&#123;</span><br><span class="line">            <span class="string">&#x27;/api&#x27;</span>:&#123;</span><br><span class="line">                <span class="comment">// target:&#x27;&lt;url&gt;&#x27;,</span></span><br><span class="line">                <span class="attr">target</span>:<span class="string">&#x27;http://localhost:3000&#x27;</span>,</span><br><span class="line">                <span class="attr">changeOrigin</span>:<span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// /api === http://localhost:3000</span></span><br><span class="line"><span class="title function_">axios</span>(&#123;</span><br><span class="line">    <span class="attr">url</span>:<span class="string">&#x27;/api&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>后端</p>
+<ol>
+<li><p>全局安装</p>
+<p><code>npm install express-generator -g</code></p>
+</li>
+<li><p>创建项目</p>
+<p><code>express --view=ejs 项目名称</code></p>
+</li>
+<li><p>安装依赖</p>
+<p><code>cd server</code></p>
+<p><code>npm install</code></p>
+<p><code>npm start</code></p>
+</li>
+<li><p>后端接口</p>
+<p>server &#x2F; routes &#x2F; index.js</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="五、Vue路由"><a href="#五、Vue路由" class="headerlink" title="五、Vue路由"></a>五、Vue路由</h2><ol>
+<li><h4 id="路由安装和介绍"><a href="#路由安装和介绍" class="headerlink" title="路由安装和介绍"></a>路由安装和介绍</h4><p>（router、单页面应用、SPA）</p>
+<p>单页面应用：一个url（只有一个html）</p>
+<ul>
+<li><p>跳转不同组件</p>
+</li>
+<li><p>路径传值（url传值）</p>
+</li>
+<li><p>拦截</p>
+<hr>
+</li>
+</ul>
+<ol>
+<li><p>使用</p>
+<p><code>vue create 项目名称</code></p>
+<p>选择自定义安装：安装Router</p>
+<p>目录结构：</p>
+<ul>
+<li>router &#x2F; index.js：路由的配置</li>
+<li>views：页面（组件）</li>
+<li>components：页面模块（页面中的组件）</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><h4 id="router-link相关配置"><a href="#router-link相关配置" class="headerlink" title="router-link相关配置"></a>router-link相关配置</h4><ol>
+<li><p>to：表示目标路由的链接</p>
+<ul>
+<li><p>跳转形式</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">&quot;/my&quot;</span> <span class="attr">tag</span>=<span class="string">&#x27;div&#x27;</span>&gt;</span>我的<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">&#x27;&#123;path:&quot;/my&quot;&#125;&#x27;</span>&gt;</span>我的<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">&#x27;&#123;name:&quot;Cart&quot;&#125;&#x27;</span>&gt;</span>购物车<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>路径传值</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">&#x27;&#123; name:&quot;Cart&quot;, query:&#123;a:1&#125; &#125;&#x27;</span>&gt;</span>购物车<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>tag：默认生成a标签，如果希望修改 <code>tag=&#39;li&#39;</code></p>
+</li>
+<li><p>组件形式的跳转方式</p>
+<p>replace</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">&#x27;&#123; path:&quot;Cart&quot; replace &#125;&#x27;</span>&gt;</span>购物车<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>append</p>
+</li>
+<li><p>exact：精准路由匹配模式</p>
+</li>
+<li><p>js的跳转方式</p>
+<p><code>router.push</code>：打开新页面，并且可以返回上一页</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">$router</span>.<span class="title function_">push</span>(<span class="string">&#x27;/list&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><code>router.replace</code>：打开新页面，不能返回上一页</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">$router</span>.<span class="title function_">replace</span>(<span class="string">&#x27;/list&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><code>router.go</code>：打开新页面，跳转几层</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">$router</span>.<span class="title function_">go</span>();</span><br></pre></td></tr></table></figure>
+
+<p><code>router.back</code>：返回上一页</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">$router</span>.<span class="title function_">back</span>();</span><br></pre></td></tr></table></figure>
+
+<p>传值</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">$router</span>.<span class="title function_">push</span>(&#123;</span><br><span class="line">    <span class="attr">path</span>:<span class="string">&#x27;/list&#x27;</span>,</span><br><span class="line">    <span class="attr">query</span>:&#123;</span><br><span class="line">        <span class="attr">type</span>:<span class="string">&#x27;selectList&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><h4 id="router内文件配置"><a href="#router内文件配置" class="headerlink" title="router内文件配置"></a>router内文件配置</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> routes = &#123;</span><br><span class="line">    <span class="comment">// 直接引入</span></span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="attr">path</span>:<span class="string">&quot;/&quot;</span>,</span><br><span class="line">    	<span class="attr">name</span>:<span class="string">&quot;Home&quot;</span>,</span><br><span class="line">    	<span class="attr">component</span>:<span class="title class_">Home</span>,</span><br><span class="line">    	<span class="comment">// 二级路由</span></span><br><span class="line">    	<span class="attr">children</span>:[</span><br><span class="line">    		&#123;</span><br><span class="line">    			<span class="attr">path</span>:<span class="string">&#x27;city&#x27;</span>,</span><br><span class="line">    			<span class="attr">name</span>:<span class="string">&#x27;city&#x27;</span>,</span><br><span class="line">    			<span class="attr">component</span>:<span class="function">()=&gt;</span><span class="keyword">import</span>(<span class="string">&quot;../views/About.vue&quot;</span>),</span><br><span class="line">			&#125;,</span><br><span class="line">    	]</span><br><span class="line">	&#125;,</span><br><span class="line">    <span class="comment">// 懒加载路由</span></span><br><span class="line">	&#123;</span><br><span class="line">        <span class="attr">path</span>:<span class="string">&quot;/about&quot;</span>,</span><br><span class="line">        <span class="attr">name</span>:<span class="string">&quot;About&quot;</span>,</span><br><span class="line">        <span class="attr">component</span>:<span class="function">()=&gt;</span><span class="keyword">import</span>(<span class="string">&quot;../views/About.vue&quot;</span>),</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 重定向</span></span><br><span class="line">    &#123;<span class="attr">path</span>:<span class="string">&#x27;*&#x27;</span>,<span class="attr">redirect</span>:<span class="string">&#x27;/&#x27;</span>&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><h4 id="路径传值"><a href="#路径传值" class="headerlink" title="路径传值"></a>路径传值</h4><ol>
+<li><p>传值</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">$router</span>.<span class="title function_">push</span>(&#123;</span><br><span class="line">    <span class="attr">path</span>:<span class="string">&#x27;/list&#x27;</span>,</span><br><span class="line">    <span class="attr">query</span>:&#123;</span><br><span class="line">       <span class="attr">a</span>:<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>接收</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">created</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>( <span class="variable language_">this</span>.<span class="property">$route</span>.<span class="property">query</span>.<span class="property">a</span> );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><h4 id="导航守卫（拦截）"><a href="#导航守卫（拦截）" class="headerlink" title="导航守卫（拦截）"></a>导航守卫（拦截）</h4><ol>
+<li><p>全局</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">router.<span class="title function_">beforeEach</span>(<span class="function">(<span class="params">to,<span class="keyword">from</span>,next</span>)=&gt;</span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">router.<span class="title function_">afterEach</span>(<span class="function">(<span class="params">to,<span class="keyword">from</span>,next</span>)=&gt;</span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>组件内守卫</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">beforeRouteEnter</span>(<span class="function">(<span class="params">to,<span class="keyword">from</span>,next</span>)=&gt;</span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">beforeRouteUpdate</span>(<span class="function">(<span class="params">to,<span class="keyword">from</span>,next</span>)=&gt;</span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">beforeRouteLeave</span>(<span class="function">(<span class="params">to,<span class="keyword">from</span>,next</span>)=&gt;</span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>路由独享</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">beforeEnter</span>(<span class="function">(<span class="params">to,<span class="keyword">from</span>,next</span>)=&gt;</span>&#123;&#125;)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><code>to</code>：这是你跳转到哪个路由对象</p>
+<p><code>from</code>：这是你要离开的路由对象</p>
+<p><code>next</code>：是一个方法，可以接受参数，这个方法必须调用</p>
+<ul>
+<li><p><code>next()</code>：告诉保安要过去，去哪里就是to</p>
+</li>
+<li><p><code>next(false)</code>：可以不通过，中断跳转</p>
+</li>
+<li><p><code>next(&#39;/&#39;)</code>：保安不让过，你可以去另一个地方进行通过</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">router.<span class="title function_">beforeEach</span>(<span class="function">(<span class="params">to,<span class="keyword">from</span>,next</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> userInfo = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(to.<span class="property">name</span> == <span class="string">&#x27;About&#x27;</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!userInfo)&#123;</span><br><span class="line">            router.<span class="title function_">push</span>(<span class="string">&#x27;/login&#x27;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">next</span>();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><h4 id="watch：监听"><a href="#watch：监听" class="headerlink" title="watch：监听"></a>watch：监听</h4><ol>
+<li><p>监听路由的变化</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">watch</span>:&#123;</span><br><span class="line">    $route(to,<span class="keyword">from</span>)&#123;</span><br><span class="line">        <span class="comment">// to:最新的路由</span></span><br><span class="line">        <span class="comment">// from:上一次的路由</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(to.<span class="property">path</span>, <span class="keyword">from</span>.<span class="property">path</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>监听数据的变化</p>
+<p>监听b但是是b的c改变了，所以要监听b内所有的属性变化，就要用到深度监听</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;about&quot;&gt;</span><br><span class="line">    &lt;h1&gt;A:&#123;&#123;  a &#125;&#125;&lt;/h1&gt;</span><br><span class="line">    &lt;h2&gt;B:&#123;&#123;  b.c &#125;&#125;  &lt;/h2&gt;</span><br><span class="line">    &lt;button @click=&#x27;btn&#x27;&gt;按钮&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">export default&#123;</span><br><span class="line"></span><br><span class="line">	data () &#123;</span><br><span class="line">		return &#123;</span><br><span class="line">			a:1,</span><br><span class="line">			b:&#123;</span><br><span class="line">				c:1</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	methods:&#123;</span><br><span class="line">		btn()&#123;</span><br><span class="line">			this.a = 2;</span><br><span class="line">			this.b.c = 2;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	watch:&#123;</span><br><span class="line"></span><br><span class="line">		a(to,from)&#123;</span><br><span class="line">			//to   ==&gt; 最新的</span><br><span class="line">			//from ==&gt; 上一次的</span><br><span class="line">			console.log(to,from)</span><br><span class="line">		&#125;,</span><br><span class="line">		b:&#123;</span><br><span class="line">			handler(to)&#123;</span><br><span class="line">				console.log(&#x27;B:&#x27;,to.c)</span><br><span class="line">			&#125;,</span><br><span class="line">			//深度监听</span><br><span class="line">			deep:true</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h2 id="六、Vuex"><a href="#六、Vuex" class="headerlink" title="六、Vuex"></a>六、Vuex</h2><p>vuex：状态管理（集中式存储管理应用的所有组件的状态）</p>
+<p>vuex的属性：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">state</span>: &#123;&#125;,       <span class="comment">// 放入数据[类似于组件中的data]</span></span><br><span class="line"><span class="attr">getters</span>: &#123;&#125;,     <span class="comment">// 就是一个计算属性[类似于组件中的computed]</span></span><br><span class="line"><span class="attr">mutations</span>: &#123;&#125;,   <span class="comment">// 就是一个存放方法的[类似于组件中的methods]</span></span><br><span class="line"><span class="attr">actions</span>: &#123;&#125;,     <span class="comment">// Action 类似于 mutation [Action 提交的是 mutation，而不是直接变更状态。]</span></span><br><span class="line"><span class="attr">modules</span>: &#123;&#125;,     <span class="comment">// 分成多个模块，每个模块都有state、getters、mutations、actions</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ol>
+<li><h4 id="Vuex中的state"><a href="#Vuex中的state" class="headerlink" title="Vuex中的state"></a>Vuex中的state</h4><p>state数据如何拿到</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 方式一</span><br><span class="line">&#123;&#123; $store.state.a &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 方式二</span><br><span class="line">&#123;&#123; a &#125;&#125;</span><br><span class="line">&#123;&#123; b &#125;&#125;</span><br><span class="line">&#123;&#123; arr &#125;&#125;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; mapState &#125; from &#x27;vuex&#x27;</span><br><span class="line">export default&#123;</span><br><span class="line">	computed:&#123;</span><br><span class="line">        ...mapState([&#x27;a&#x27;,&#x27;b&#x27;,&#x27;arr&#x27;])</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><h4 id="Vuex中的getters"><a href="#Vuex中的getters" class="headerlink" title="Vuex中的getters"></a>Vuex中的getters</h4><p>&#x2F; store &#x2F; index.js</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Vue</span> <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Vuex</span> <span class="keyword">from</span> <span class="string">&quot;vuex&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">use</span>(<span class="title class_">Vuex</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> <span class="title class_">Vuex</span>.<span class="title class_">Store</span>(&#123;</span><br><span class="line">  <span class="attr">state</span>: &#123;</span><br><span class="line">  	<span class="attr">list</span>:[</span><br><span class="line">  		&#123;</span><br><span class="line">  			<span class="attr">goods_id</span>:<span class="number">1</span>,</span><br><span class="line">  			<span class="attr">goods_name</span>:<span class="string">&#x27;鞋&#x27;</span>,</span><br><span class="line">  			<span class="attr">goods_num</span>:<span class="number">3</span>,</span><br><span class="line">  			<span class="attr">goods_price</span>:<span class="number">299</span></span><br><span class="line">  		&#125;,</span><br><span class="line">  		&#123;</span><br><span class="line">  			<span class="attr">goods_id</span>:<span class="number">2</span>,</span><br><span class="line">  			<span class="attr">goods_name</span>:<span class="string">&#x27;衣服&#x27;</span>,</span><br><span class="line">  			<span class="attr">goods_num</span>:<span class="number">2</span>,</span><br><span class="line">  			<span class="attr">goods_price</span>:<span class="number">49</span></span><br><span class="line">  		&#125;</span><br><span class="line">  	]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">getters</span>:&#123;</span><br><span class="line">  	<span class="title function_">total</span>(<span class="params"> state </span>)&#123;</span><br><span class="line">  		<span class="keyword">let</span> obj = &#123;</span><br><span class="line">  			<span class="attr">count</span>:<span class="number">0</span>,</span><br><span class="line">  			<span class="attr">num</span>:<span class="number">0</span></span><br><span class="line">  		&#125;</span><br><span class="line">  		state.<span class="property">list</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">v</span>=&gt;</span>&#123;</span><br><span class="line">  			<span class="comment">//总价</span></span><br><span class="line">  			obj.<span class="property">count</span> += v.<span class="property">goods_num</span> * v.<span class="property">goods_price</span>;</span><br><span class="line">  			<span class="comment">//总数量</span></span><br><span class="line">  			obj.<span class="property">num</span> += v.<span class="property">goods_num</span>;</span><br><span class="line">  		&#125;)</span><br><span class="line">  		<span class="keyword">return</span> obj;</span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">mutations</span>: &#123;&#125;,</span><br><span class="line">  <span class="attr">actions</span>: &#123;&#125;,</span><br><span class="line">  <span class="attr">modules</span>: &#123;&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">共:&#123;&#123; total.num &#125;&#125;</span><br><span class="line">总计:&#123;&#123; total.count &#125;&#125;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; mapState, mapGetters &#125; from &#x27;vuex&#x27;</span><br><span class="line">export default&#123;</span><br><span class="line">	computed:&#123;</span><br><span class="line">        ...mapState([&#x27;list&#x27;]),</span><br><span class="line">        ...mapGetters([&#x27;total&#x27;])</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><h4 id="Vuex中的mutations"><a href="#Vuex中的mutations" class="headerlink" title="Vuex中的mutations"></a>Vuex中的mutations</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;home&quot;&gt;</span><br><span class="line">  	&lt;h1&gt;这是首页Home&lt;/h1&gt;</span><br><span class="line">  	&lt;ul&gt;</span><br><span class="line">  		&lt;li v-for=&#x27;(item,index) in list&#x27; :key=&#x27;index&#x27;&gt;</span><br><span class="line">  			&#123;&#123;item.appName&#125;&#125;</span><br><span class="line">  		&lt;/li&gt;</span><br><span class="line">  	&lt;/ul&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import axios from &#x27;axios&#x27;</span><br><span class="line">import &#123;mapMutations,mapState&#125; from &#x27;vuex&#x27;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &quot;Home&quot;,</span><br><span class="line">  created()&#123;</span><br><span class="line">  	this.getData();</span><br><span class="line">  &#125;,</span><br><span class="line">  computed:&#123;</span><br><span class="line">  	...mapState([&#x27;list&#x27;])</span><br><span class="line">  &#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">  	...mapMutations([&#x27;initData&#x27;]),</span><br><span class="line">  	getData()&#123;</span><br><span class="line"></span><br><span class="line">  		axios(&#123;</span><br><span class="line">  			url:&#x27;http://39.101.217.150:8075/apps/list&#x27;,</span><br><span class="line">  			params:&#123;</span><br><span class="line">  				page:1,</span><br><span class="line">  				size:3</span><br><span class="line">  			&#125;</span><br><span class="line">  		&#125;).then(res=&gt;&#123;</span><br><span class="line">  			this.initData(res.data.data.records);</span><br><span class="line">  		&#125;)</span><br><span class="line"></span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> <span class="title class_">Vuex</span>.<span class="title class_">Store</span>(&#123;</span><br><span class="line">  <span class="attr">state</span>: &#123;</span><br><span class="line">  	<span class="attr">a</span>:<span class="number">1</span>,</span><br><span class="line">  	<span class="attr">list</span>:[]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">mutations</span>: &#123;</span><br><span class="line">  	<span class="title function_">initData</span>(<span class="params"> state , data </span>)&#123;</span><br><span class="line">  		state.<span class="property">list</span> = data;</span><br><span class="line">  	&#125;,</span><br><span class="line">  	<span class="title function_">changeBtn</span>(<span class="params"> state </span>)&#123;</span><br><span class="line">  		state.<span class="property">a</span> = <span class="string">&#x27;abc&#x27;</span></span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">actions</span>: &#123;&#125;,</span><br><span class="line">  <span class="attr">modules</span>: &#123;&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><h4 id="Vuex中的actions"><a href="#Vuex中的actions" class="headerlink" title="Vuex中的actions"></a>Vuex中的actions</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;home&quot;&gt;</span><br><span class="line">  	&lt;ul&gt;</span><br><span class="line">  		&lt;li v-for=&#x27;(item,index) in list&#x27; :key=&#x27;index&#x27;&gt;</span><br><span class="line">  			&lt;input type=&quot;radio&quot; :checked=&#x27;item.checked&#x27;&gt;</span><br><span class="line">  		&lt;/li&gt;</span><br><span class="line">  	&lt;/ul&gt;</span><br><span class="line">  	&lt;label @click=&#x27;checkedFn&#x27;&gt;</span><br><span class="line">  		&lt;input type=&quot;radio&quot; :checked=&#x27;checkAll&#x27;/&gt;全选</span><br><span class="line">  	&lt;/label&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">import &#123;mapState,mapGetters,mapActions&#125; from &#x27;vuex&#x27;</span><br><span class="line">export default&#123;</span><br><span class="line">	computed:&#123;</span><br><span class="line">		...mapState([&#x27;list&#x27;]),</span><br><span class="line">		...mapGetters([&#x27;checkAll&#x27;])</span><br><span class="line">	&#125;,</span><br><span class="line">	methods:&#123;</span><br><span class="line">		...mapActions([&#x27;checkedFn&#x27;])</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Vue</span> <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Vuex</span> <span class="keyword">from</span> <span class="string">&quot;vuex&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">use</span>(<span class="title class_">Vuex</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> <span class="title class_">Vuex</span>.<span class="title class_">Store</span>(&#123;</span><br><span class="line">  <span class="attr">state</span>: &#123;</span><br><span class="line">  	<span class="attr">list</span>:[  <span class="comment">//===&gt; length 6</span></span><br><span class="line">  		&#123;<span class="attr">checked</span>:<span class="literal">false</span>&#125;,</span><br><span class="line">  		&#123;<span class="attr">checked</span>:<span class="literal">false</span>&#125;,</span><br><span class="line">  		&#123;<span class="attr">checked</span>:<span class="literal">false</span>&#125;,</span><br><span class="line">  		&#123;<span class="attr">checked</span>:<span class="literal">false</span>&#125;,</span><br><span class="line">  		&#123;<span class="attr">checked</span>:<span class="literal">false</span>&#125;,</span><br><span class="line">  		&#123;<span class="attr">checked</span>:<span class="literal">false</span>&#125;</span><br><span class="line">  	],</span><br><span class="line">  	<span class="attr">selectedList</span>:[]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">getters</span>: &#123;</span><br><span class="line">  	<span class="title function_">checkAll</span>(<span class="params"> state </span>)&#123;</span><br><span class="line">  		<span class="keyword">return</span> state.<span class="property">list</span>.<span class="property">length</span> == state.<span class="property">selectedList</span>.<span class="property">length</span>;</span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">mutations</span>: &#123;</span><br><span class="line">  	<span class="comment">//全选</span></span><br><span class="line">  	<span class="title function_">checkAll</span>(<span class="params"> state </span>)&#123;</span><br><span class="line">  		state.<span class="property">selectedList</span> = state.<span class="property">list</span>.<span class="title function_">map</span>(<span class="function"><span class="params">v</span>=&gt;</span>&#123;</span><br><span class="line">  			v.<span class="property">checked</span> = <span class="literal">true</span>;</span><br><span class="line">  		&#125;)</span><br><span class="line">  	&#125;,</span><br><span class="line">  	<span class="comment">//全不选</span></span><br><span class="line">  	<span class="title function_">unCheckAll</span>(<span class="params"> state </span>)&#123;</span><br><span class="line">  		state.<span class="property">list</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">v</span>=&gt;</span>&#123;</span><br><span class="line">  			v.<span class="property">checked</span> = <span class="literal">false</span>;</span><br><span class="line">  		&#125;)</span><br><span class="line">  		state.<span class="property">selectedList</span> = [];</span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">actions</span>: &#123;</span><br><span class="line">  	<span class="title function_">checkedFn</span>(<span class="params">&#123;commit,getters&#125;</span>)&#123;</span><br><span class="line"></span><br><span class="line">  		getters.<span class="property">checkAll</span> ? <span class="title function_">commit</span>(<span class="string">&#x27;unCheckAll&#x27;</span>) : <span class="title function_">commit</span>(<span class="string">&#x27;checkAll&#x27;</span>)</span><br><span class="line"></span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">modules</span>: &#123;&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><p><strong><code>mapState</code>、<code>mapGetters</code>放在组件中的computed中</strong></p>
+</li>
+<li><p><strong><code>mapMutations</code>、<code>mapActions</code>放在组件中的methods中</strong></p>
+</li>
+</ul>
+</li>
+<li><h4 id="actions和mutations的区别【面试题】"><a href="#actions和mutations的区别【面试题】" class="headerlink" title="actions和mutations的区别【面试题】"></a>actions和mutations的区别【面试题】</h4><ul>
+<li><p>action 提交的是 mutation，而不是直接变更状态</p>
+</li>
+<li><p>mutations 是同步的、action 可以包含任意异步操作</p>
+</li>
+<li><p>action 更加容易调试</p>
+</li>
+</ul>
+</li>
+<li><h4 id="Vuex中的modules"><a href="#Vuex中的modules" class="headerlink" title="Vuex中的modules"></a>Vuex中的modules</h4><p>目录结构：</p>
+<p><img src="/../image/Vue/image-20240726231609152.png" alt="image-20240726231609152"></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Vue</span> <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Vuex</span> <span class="keyword">from</span> <span class="string">&quot;vuex&quot;</span>;</span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">use</span>(<span class="title class_">Vuex</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> path <span class="keyword">from</span> <span class="string">&#x27;./modules/path&#x27;</span></span><br><span class="line"><span class="keyword">import</span> order <span class="keyword">from</span> <span class="string">&#x27;./modules/order&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> <span class="title class_">Vuex</span>.<span class="title class_">Store</span>(&#123;</span><br><span class="line">  <span class="attr">modules</span>: &#123;</span><br><span class="line">  	path,</span><br><span class="line">  	order</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// part.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span>&#123;</span><br><span class="line">	<span class="attr">state</span>:&#123;</span><br><span class="line">		<span class="attr">list</span>:[<span class="string">&#x27;地址1&#x27;</span>,<span class="string">&#x27;地址2&#x27;</span>]</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">getters</span>:&#123;&#125;,</span><br><span class="line">	<span class="attr">mutations</span>:&#123;</span><br><span class="line">		<span class="title function_">btn</span>(<span class="params"></span>)&#123;</span><br><span class="line">			<span class="title function_">alert</span>(<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">actions</span>:&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;home&quot;&gt;</span><br><span class="line">    &lt;img alt=&quot;Vue logo&quot; src=&quot;../assets/logo.png&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;button @click=&#x27;btn&#x27;&gt;按钮&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">    地址：&#123;&#123;pathList&#125;&#125;</span><br><span class="line">    订单：&#123;&#123;orderList&#125;&#125;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123;mapState,mapMutations&#125; from &#x27;vuex&#x27;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  name: &quot;Home&quot;,</span><br><span class="line">  computed:&#123;</span><br><span class="line">  	...mapState(&#123;</span><br><span class="line">  		pathList:state=&gt;state.path.list,</span><br><span class="line">  		orderList:state=&gt;state.order.list</span><br><span class="line">  	&#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">  	...mapMutations([&#x27;btn&#x27;])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="七、Vue面试题"><a href="#七、Vue面试题" class="headerlink" title="七、Vue面试题"></a>七、Vue面试题</h2><ol>
+<li><h4 id="双向绑定的原理"><a href="#双向绑定的原理" class="headerlink" title="双向绑定的原理"></a>双向绑定的原理</h4><p>通过数据劫持结合发布者订阅者模式，使用Object.defineProperty方法对每个属性的get和set进行拦截，当数据发现变化时，发布消息给订阅者，触发相应的监听回调，实现视图和数据的双向同步更新</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(对象,<span class="string">&#x27;属性&#x27;</span>,&#123;</span><br><span class="line">    <span class="comment">// 设置劫持</span></span><br><span class="line">    <span class="title function_">set</span>(<span class="params"></span>)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 获取劫持</span></span><br><span class="line">    <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">id</span>=<span class="string">&#x27;btnInput&#x27;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">&#x27;h1&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">&#x27;h2&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">let</span> btnInput = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btnInput&quot;</span>);</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">let</span> h1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;h1&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">let</span> h2 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;h2&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">let</span> obj = &#123;&#125;;</span></span><br><span class="line"><span class="language-javascript"><span class="comment">//只要赋值，给我console.log( &#x27;赋值了&#x27; )</span></span></span><br><span class="line"><span class="language-javascript"><span class="comment">//obj.xx = &#x27;123&#x27;;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(obj,<span class="string">&#x27;names&#x27;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript">	<span class="comment">//设置劫持</span></span></span><br><span class="line"><span class="language-javascript">	<span class="title function_">set</span>(<span class="params"> val </span>)&#123;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">		h1.<span class="property">innerHTML</span> = val;</span></span><br><span class="line"><span class="language-javascript">		h2.<span class="property">innerHTML</span> = val;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">		<span class="variable language_">console</span>.<span class="title function_">log</span>( <span class="string">&#x27;设置&#x27;</span> );</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">		names=val;</span></span><br><span class="line"><span class="language-javascript">	&#125;,</span></span><br><span class="line"><span class="language-javascript">	<span class="comment">//获取劫持</span></span></span><br><span class="line"><span class="language-javascript">	<span class="title function_">get</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">		<span class="keyword">return</span> names;</span></span><br><span class="line"><span class="language-javascript">	&#125;	</span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">btnInput.<span class="property">oninput</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	obj.<span class="property">names</span> = <span class="variable language_">this</span>.<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><h4 id="Object-freeze性能优化"><a href="#Object-freeze性能优化" class="headerlink" title="Object.freeze性能优化"></a>Object.freeze性能优化</h4><p>用于冻结对象，禁止对于该对象的属性进行修改（由于数组本身也是对象，因此该方法可以对数组使用）</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="title function_">created</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> res = <span class="keyword">await</span> <span class="title function_">axios</span>(&#123;</span><br><span class="line">        <span class="attr">url</span>:<span class="string">&#x27;xxx&#x27;</span>，</span><br><span class="line">        <span class="attr">params</span>:&#123;</span><br><span class="line">        <span class="attr">page</span>:<span class="number">1</span>,</span><br><span class="line">        <span class="attr">size</span>:<span class="number">3</span></span><br><span class="line">    &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">list</span> = <span class="title class_">Object</span>.<span class="title function_">freeze</span>(res.<span class="property">data</span>.<span class="property">data</span>.<span class="property">records</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><h4 id="Vue生命周期-1"><a href="#Vue生命周期-1" class="headerlink" title="Vue生命周期"></a>Vue生命周期</h4><ol>
+<li><p>vue的生命周期有哪些</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">beforeCreate</span><br><span class="line">created</span><br><span class="line">beforeMount</span><br><span class="line">mounted</span><br><span class="line">beforeUpdate</span><br><span class="line">updated</span><br><span class="line">beforeDestroy</span><br><span class="line">destroyed</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>一旦进入组件或者页面，会执行哪些生命周期</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">beforeCreate</span><br><span class="line">created</span><br><span class="line">beforeMount</span><br><span class="line">mounted</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>如果使用了keep-alive会多出来俩个生命周期</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">activated</span><br><span class="line">deactivated</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>如果使用了keep-alive第一次进入组件会执行5个生命周期</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">beforeCreate</span><br><span class="line">created</span><br><span class="line">beforeMount</span><br><span class="line">mounted</span><br><span class="line">activated</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>如果使用了keep-alive第二次或者第N次，每次都会执行一个生命周期</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">activated</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><h4 id="v-show和v-if的区别"><a href="#v-show和v-if的区别" class="headerlink" title="v-show和v-if的区别"></a>v-show和v-if的区别</h4><ul>
+<li>v-show：显示和隐藏 : <code>display:none</code>进行隐藏 、<code>display:block</code>进行显示		</li>
+<li>v-if：创建和删除：remove、append</li>
+<li>区别：<ul>
+<li>显示和隐藏用：v-show<br>创建和删除用：v-if</li>
+<li>频繁切换用：v-show<br>不频繁切换用：v-if</li>
+<li>首次加载：用v-if，不用v-show<ul>
+<li>如果用v-if可以没有这个盒子，然后再通过v-if进行创建（但是第一次进入页面是没有这个盒子，是不加载的）。</li>
+<li>如果用v-show这个盒子不管是显示还是隐藏，该盒子都是在的（节点都是存在）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>使用场景：<ul>
+<li>v-show ： 加入购物车、分享、蒙层这种都基本上用v-show<br>v-if : 首页栏目切换的时候v-if</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="v-if和v-for的优先级"><a href="#v-if和v-for的优先级" class="headerlink" title="v-if和v-for的优先级"></a>v-if和v-for的优先级</h4><p><strong>v-for的优先级要比v-if的优先级高</strong></p>
+<p>证明这个事情，是在vue.js源码中10997行</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (el.<span class="property">staticRoot</span> &amp;&amp; !el.<span class="property">staticProcessed</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">genStatic</span>(el, state)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (el.<span class="property">once</span> &amp;&amp; !el.<span class="property">onceProcessed</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">genOnce</span>(el, state)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (el.<span class="property">for</span> &amp;&amp; !el.<span class="property">forProcessed</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">genFor</span>(el, state)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (el.<span class="property">if</span> &amp;&amp; !el.<span class="property">ifProcessed</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">genIf</span>(el, state)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (el.<span class="property">tag</span> === <span class="string">&#x27;template&#x27;</span> &amp;&amp; !el.<span class="property">slotTarget</span> &amp;&amp; !state.<span class="property">pre</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">genChildren</span>(el, state) || <span class="string">&#x27;void 0&#x27;</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (el.<span class="property">tag</span> === <span class="string">&#x27;slot&#x27;</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">genSlot</span>(el, state)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注：v-if和v-for不要写在同一个节点上，这个性能很差。（v-if要写在父节点上）</strong></p>
+</li>
+<li><h4 id="ref、keep-alive、nextTick"><a href="#ref、keep-alive、nextTick" class="headerlink" title="ref、keep-alive、nextTick"></a>ref、keep-alive、nextTick</h4><ol>
+<li><p><code>ref</code>：获取dom</p>
+<p>场景：如果项目中使用插件，并且插件是要获取dom的，那么就可以使用ref了。</p>
+</li>
+<li><p><code>keep-alive</code>：缓存组件</p>
+<p>一旦使用keep-alive会多两个生命周期，activated、deactivated</p>
+<p>功能：提升性能的</p>
+</li>
+<li><p><code>nextTick</code>：当dom更新完毕执行内部代码</p>
+<p>场景：使用插件的时候会用到。例如new Swiper这个插件可能会获取当前元素的宽度或者高度，等dom都加载完毕再去获取宽度和高度就不会有任何问题了。</p>
+</li>
+</ol>
+</li>
+<li><h4 id="computed、methods、watch区别"><a href="#computed、methods、watch区别" class="headerlink" title="computed、methods、watch区别"></a>computed、methods、watch区别</h4><ol>
+<li><p><strong>computed：计算属性</strong></p>
+<p>可以监听某些数据的变化，并且有缓存。</p>
+<p>如果一进入页面调用，就会触发</p>
+</li>
+<li><p><strong>methods  ： 可以放入函数</strong></p>
+<p>没有缓存</p>
+<p>如果一进入页面调用，就会触发</p>
+</li>
+<li><p><strong>watch ：监听（路由和数据）</strong></p>
+<p>当数据发生改变时，才会触发</p>
+<p>可以得到现在的值和过去的值</p>
+</li>
+</ol>
+</li>
+<li><h4 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h4><ol>
+<li><p><strong>父传子</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">父：</span><br><span class="line">&lt;HelloWorld :msg=&quot;str&quot; /&gt;</span><br><span class="line">&lt;HelloWorld :msg=&quot;str&quot; &gt;&lt;/HelloWorld&gt;</span><br><span class="line"></span><br><span class="line">子：</span><br><span class="line">props:[&#x27;msg&#x27;]</span><br><span class="line">props: &#123;</span><br><span class="line">	msg: String,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p><strong>子传父</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">子：</span><br><span class="line">&lt;button @click=&quot;changeParentName&quot;&gt;改变父组件的name&lt;/button&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    methods: &#123;</span><br><span class="line">        //子组件的事件</span><br><span class="line">        changeParentName: function() &#123;</span><br><span class="line">            this.$emit(&#x27;handleChange&#x27;, &#x27;Jack&#x27;) // 触发父组件中handleChange事件并传参Jack</span><br><span class="line">            // 注：此处事件名称与父组件中绑定的事件名称要一致</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">父：</span><br><span class="line">&lt;child @handleChange=&quot;changeName&quot;&gt;&lt;/child&gt;</span><br><span class="line">methods: &#123;</span><br><span class="line">    changeName(name) &#123;  // name形参是子组件中传入的值Jack</span><br><span class="line">        this.name = name</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p><strong>兄弟组件传值</strong></p>
+<p>创建bus作为中转</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import Vue from &quot;vue&quot;;</span><br><span class="line">export default new Vue;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">A组件：</span><br><span class="line">&lt;button @click=&#x27;btn&#x27;&gt;HelloWorld按钮&lt;/button&gt;</span><br><span class="line">data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      hlStr:&quot;这是helloWorld组件的数据&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">methods:&#123;</span><br><span class="line">    btn()&#123;</span><br><span class="line">      bus.$emit(&#x27;selectItem&#x27;,this.hlStr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">B组件：</span><br><span class="line">created()&#123;</span><br><span class="line">		bus.$on(&#x27;selectItem&#x27;,(val)=&gt;&#123;</span><br><span class="line">			console.log( val , 1111);</span><br><span class="line">		&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><h4 id="slot插槽"><a href="#slot插槽" class="headerlink" title="slot插槽"></a>slot插槽</h4><p>使用场景：组件中有些地方的布局可能大多一致，但是细微有些小小变化</p>
+</li>
+<li><h4 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h4><ol>
+<li><p><strong>SPA单页面应用和传统页面跳转有什么区别？</strong></p>
+<p>SPA跳转是一个页面进行切换</p>
+<p>传统页面跳转就是跳转不同的html了</p>
+<p>SPA对于seo部分不是特别好，只能收录一个</p>
+<p>传统的页面对于seo比较好，多个html文件收录</p>
+</li>
+<li><p><strong>路径传值</strong></p>
+<p>显示：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">传：</span><br><span class="line">this.$router.push(&#123;</span><br><span class="line">        path:&#x27;/about&#x27;,</span><br><span class="line">        query:&#123;</span><br><span class="line">          key:&#x27;你好&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;)</span><br><span class="line">接：</span><br><span class="line">this.$route.query</span><br></pre></td></tr></table></figure>
+
+<p>隐示：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">传：</span><br><span class="line">this.$router.push(&#123;</span><br><span class="line">        name:&#x27;About&#x27;,</span><br><span class="line">        params:&#123;</span><br><span class="line">          key:&#x27;你好&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;)</span><br><span class="line">接：</span><br><span class="line">this.$route.params</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p><strong>路由的模式</strong></p>
+<p>mode: “history”   <a target="_blank" rel="noopener" href="http://localhost:8080/about">http://localhost:8080/about</a></p>
+<p>mode:”hash”       <a target="_blank" rel="noopener" href="http://localhost:8080/#/about">http://localhost:8080/#/about</a></p>
+</li>
+<li><p><strong>路由导航守卫（拦截、路由钩子函数）</strong></p>
+<p>全局</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">beforeEach</span><br><span class="line">beforeResolve</span><br><span class="line">afterEach</span><br></pre></td></tr></table></figure>
+
+<p>路由独享</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">beforeEnter</span><br></pre></td></tr></table></figure>
+
+<p>组件内</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">beforeRouteEnter</span><br><span class="line">beforeRouteUpdate (2.2 新增)</span><br><span class="line">beforeRouteLeave</span><br></pre></td></tr></table></figure>
+
+<p><strong>场景：要去拦截，判断用户是否是登录状态。功能：进入地址管理，用户如果没有登录是进入不了地址管理（在进入之前判断拦截），需要先登录。</strong></p>
+</li>
+<li><p><strong>子路由、动态路由</strong></p>
+<p>子路由：<code>children</code><br>动态路由：<code>path: &#39;/user/:id&#39;</code></p>
+</li>
+</ol>
+</li>
+<li><h4 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h4><ol>
+<li><p><strong>Vuex有哪些部分构成</strong></p>
+<p>state、getters、mutations、actions、modules</p>
+</li>
+<li><p><strong>什么场景用Vuex</strong></p>
+<p>共享、方便管理、方便维护、组件传值……</p>
+<p>项目：购物车数据，订单数据，用户的登录信息….</p>
+</li>
+<li><p><strong>mutations和actions的区别</strong></p>
+<p>本质区别：<br>mutations	必须是同步函数<br>actions		“可以包含”任意异步操作</p>
+<p>使用区别：mutations中可以放入函数，actions也可以放入函数，但是一般我们在mutations中放入函数而actions是提交mutations</p>
+</li>
+</ol>
+</li>
+<li><h4 id="Vue源码-模块解析"><a href="#Vue源码-模块解析" class="headerlink" title="Vue源码-模块解析"></a>Vue源码-模块解析</h4></li>
+<li><h4 id="Vue源码-生命周期"><a href="#Vue源码-生命周期" class="headerlink" title="Vue源码-生命周期"></a>Vue源码-生命周期</h4></li>
+<li><h4 id="Vue源码-添加事件"><a href="#Vue源码-添加事件" class="headerlink" title="Vue源码-添加事件"></a>Vue源码-添加事件</h4></li>
+<li><h4 id="Vue源码-data劫持"><a href="#Vue源码-data劫持" class="headerlink" title="Vue源码-data劫持"></a>Vue源码-data劫持</h4></li>
+<li><h4 id="Vue源码-更新视图"><a href="#Vue源码-更新视图" class="headerlink" title="Vue源码-更新视图"></a>Vue源码-更新视图</h4></li>
+<li><h4 id="v-model双向绑定原理"><a href="#v-model双向绑定原理" class="headerlink" title="v-model双向绑定原理"></a>v-model双向绑定原理</h4><p>通过Object.defineProperty劫持数据发生的改变，如果数据发生改变了（在set中进行赋值的），触发update方法进行更新节点内容（），从而实现了数据双向绑定的原理。</p>
+</li>
+<li><h4 id="diff算法"><a href="#diff算法" class="headerlink" title="diff算法"></a>diff算法</h4><p>功能：提升性能</p>
+<p>虚拟dom —-&gt; 其实就是数据（ 把dom数据化 ）</p>
+<p><strong>主流：snabbdom、virtual-dom</strong></p>
+<p>snabbdom：<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/snabbdom">https://www.npmjs.com/package/snabbdom</a></p>
+<ol>
+<li><p><strong>搭建环境</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm init -y</span><br><span class="line"></span><br><span class="line">cnpm install webpack@5 webpack-cli@3 webpack-dev-server@3 -S</span><br><span class="line"></span><br><span class="line">cnpm install snabbdom -S</span><br><span class="line"></span><br><span class="line">新建webpack.config.js</span><br><span class="line"></span><br><span class="line">配置webpack.config.js</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p><strong>虚拟节点 和  真实节点</strong></p>
+<p>虚拟节点：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  children: undefined</span><br><span class="line">  data: &#123;&#125;</span><br><span class="line">  elm: h1</span><br><span class="line">  key: undefined</span><br><span class="line">  sel: &quot;h1&quot;</span><br><span class="line">  text: &quot;你好h1&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>真实节点：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;h2&gt;你好&lt;/h2&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p><strong>新老节点替换的规则</strong></p>
+<ol>
+<li><p>如果新老节点不是同一个节点名称，那么就暴力删除旧的节点，创建插入新的节点。</p>
+</li>
+<li><p>只能同级比较，不能跨层比较。如果跨层那么就暴力删除旧的节点，创建插入新的节点。</p>
+</li>
+<li><p>如果是相同节点，又分为很多情况</p>
+<ol>
+<li><p>新节点有没有children</p>
+<p>如果新的节点没有children，那就证明新节点是文本，那直接把旧的替换成新的文本</p>
+</li>
+<li><p>新节点有children</p>
+<p>新的有children，旧的也有children —-&gt; 就是diff算法的核心了【3】<br>新的有children，旧的没有 —-&gt; 创建元素添加（把旧的内容删除清空掉，增加新的）</p>
+</li>
+<li><p><strong>diff算法的核心（最复杂的情况）</strong></p>
+<ol>
+<li><p><strong>旧前 和 新前</strong></p>
+<p>匹配：旧前的指针++ 、 新前的指针++</p>
+</li>
+<li><p><strong>旧后 和 新后</strong></p>
+<p>匹配：旧后的指针– 、 新后的指针–</p>
+</li>
+<li><p><strong>旧前 和 新后</strong></p>
+<p>匹配：旧前的指针++ 、 新后的指针–</p>
+</li>
+<li><p><strong>旧后 和 新前</strong></p>
+<p>匹配：旧后的指针– 、 新前的指针++</p>
+</li>
+<li><p><strong>以上都不满足条件 —-&gt; 查找</strong></p>
+<p>新的指针++，新的添加到页面上并且新在旧的种有，要给旧的复制成undefined</p>
+</li>
+<li><p><strong>创建或者删除</strong></p>
+</li>
+</ol>
+</li>
+</ol>
+<p><strong>注意：如果要提升性能，一定要加入key，key是唯一标示，在更改前后，确认是不是同一个节点。</strong></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><h4 id="snabbdom"><a href="#snabbdom" class="headerlink" title="snabbdom"></a>snabbdom</h4></li>
+<li><h4 id="手写diff算法-—-生成虚拟dom"><a href="#手写diff算法-—-生成虚拟dom" class="headerlink" title="手写diff算法 — 生成虚拟dom"></a>手写diff算法 — 生成虚拟dom</h4></li>
+<li><h4 id="手写diff算法-—-patch不是同一个节点"><a href="#手写diff算法-—-patch不是同一个节点" class="headerlink" title="手写diff算法 — patch不是同一个节点"></a>手写diff算法 — patch不是同一个节点</h4></li>
+<li><h4 id="手写diff算法-—-相同节点有没有chrildren"><a href="#手写diff算法-—-相同节点有没有chrildren" class="headerlink" title="手写diff算法 — 相同节点有没有chrildren"></a>手写diff算法 — 相同节点有没有chrildren</h4></li>
+<li><h4 id="diff算法核心-—-理论部分"><a href="#diff算法核心-—-理论部分" class="headerlink" title="diff算法核心 — 理论部分"></a>diff算法核心 — 理论部分</h4></li>
+<li><h4 id="手写diff算法-—-判断前四种情况"><a href="#手写diff算法-—-判断前四种情况" class="headerlink" title="手写diff算法 — 判断前四种情况"></a>手写diff算法 — 判断前四种情况</h4></li>
+<li><h4 id="手写diff算法-—-判断第五种情况"><a href="#手写diff算法-—-判断第五种情况" class="headerlink" title="手写diff算法 — 判断第五种情况"></a>手写diff算法 — 判断第五种情况</h4></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://cychenhaibin.github.io">Camila</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://cychenhaibin.github.io/2024/07/23/Vue/">http://cychenhaibin.github.io/2024/07/23/Vue/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://cychenhaibin.github.io" target="_blank">Camila's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Front-end/">Front-end</a></div><div class="post_share"><div class="social-share" data-image="/img/loading.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/23/ES6/" title="ES6"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">ES6</div></div></a></div><div class="next-post pull-right"><a href="/2024/07/22/Webpack/" title="Webpack"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Webpack</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/07/15/App/" title="App"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-15</div><div class="title">App</div></div></a></div><div><a href="/2024/08/09/ECharts/" title="ECharts"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-09</div><div class="title">ECharts</div></div></a></div><div><a href="/2024/07/14/CSS3/" title="CSS3"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-14</div><div class="title">CSS3</div></div></a></div><div><a href="/2024/07/23/ES6/" title="ES6"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-23</div><div class="title">ES6</div></div></a></div><div><a href="/2024/07/21/Git/" title="Git"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-21</div><div class="title">Git</div></div></a></div><div><a href="/2024/07/14/H5C3/" title="H5C3"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-14</div><div class="title">H5C3</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Gitalk</span><span id="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/loading.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Camila</div><div class="author-info__description">Chongqing University of Posts and Telecommunications 2026 undergraduate student in computer science and technology, front-end enthusiast</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/cychenhaibin"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/cychenhaibin" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81Vue%E8%84%9A%E6%89%8B%E6%9E%B6"><span class="toc-number">1.</span> <span class="toc-text">一、Vue脚手架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">1.1.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85"><span class="toc-number">1.1.1.</span> <span class="toc-text">全局安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E5%AE%89%E8%A3%85%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F"><span class="toc-number">1.1.2.</span> <span class="toc-text">测试安装是否成功</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E8%80%81%E7%89%88%E6%9C%ACvue-cli"><span class="toc-number">1.1.3.</span> <span class="toc-text">安装老版本vue-cli</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC"><span class="toc-number">1.1.4.</span> <span class="toc-text">安装指定版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%85%A8%E9%83%A8%E7%89%88%E6%9C%AC"><span class="toc-number">1.1.5.</span> <span class="toc-text">查看全部版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.1.6.</span> <span class="toc-text">下载项目</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.2.</span> <span class="toc-text">创建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vue%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.</span> <span class="toc-text">.vue文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#main-js"><span class="toc-number">1.3.1.</span> <span class="toc-text">main.js</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vue%E6%98%AF%E2%80%9D%E6%95%B0%E6%8D%AE%E2%80%9D%E9%A9%B1%E5%8A%A8"><span class="toc-number">1.3.2.</span> <span class="toc-text">vue是”数据”驱动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95"><span class="toc-number">1.3.3.</span> <span class="toc-text">模板语法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Vue%E6%8C%87%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">二、Vue指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%EF%BC%88v-xxx%EF%BC%89"><span class="toc-number">2.0.1.</span> <span class="toc-text">指令（v-xxx）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93%E5%92%8C%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="toc-number">2.0.2.</span> <span class="toc-text">列表渲染和条件渲染</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#v-if%E5%92%8Cv-show%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.0.3.</span> <span class="toc-text">v-if和v-show的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#v-model%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">2.0.4.</span> <span class="toc-text">v-model的使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7"><span class="toc-number">2.0.5.</span> <span class="toc-text">计算属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#class%E5%92%8Cstyle"><span class="toc-number">2.0.6.</span> <span class="toc-text">class和style</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#class"><span class="toc-number">2.0.6.1.</span> <span class="toc-text">class</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#style"><span class="toc-number">2.0.6.2.</span> <span class="toc-text">style</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#img%E7%9A%84src%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.0.7.</span> <span class="toc-text">img的src路径问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-number">2.0.8.</span> <span class="toc-text">事件处理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9B%91%E5%90%AC%E4%BA%8B%E4%BB%B6"><span class="toc-number">2.0.8.1.</span> <span class="toc-text">监听事件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#vue%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6-%E2%80%94-%E5%92%8Cdom%E4%BA%8B%E4%BB%B6%E4%B8%80%E8%87%B4"><span class="toc-number">2.0.8.2.</span> <span class="toc-text">vue中的事件 —- 和dom事件一致</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">2.0.8.3.</span> <span class="toc-text">事件修饰符</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue%E9%A1%B9%E7%9B%AE%E5%81%9A%E8%87%AA%E9%80%82%E5%BA%94"><span class="toc-number">2.0.9.</span> <span class="toc-text">Vue项目做自适应</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81Vue%E7%BB%84%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">三、Vue组件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6"><span class="toc-number">3.0.1.</span> <span class="toc-text">什么是组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">3.0.1.1.</span> <span class="toc-text">组件的操作</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6"><span class="toc-number">3.0.2.</span> <span class="toc-text">父组件传值给子组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%E7%BB%99%E7%88%B6%E7%BB%84%E4%BB%B6"><span class="toc-number">3.0.3.</span> <span class="toc-text">子组件传值给父组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%84%E5%BC%9F%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E5%80%BC%EF%BC%88bus%EF%BC%89"><span class="toc-number">3.0.4.</span> <span class="toc-text">兄弟组件之间的传值（bus）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#scoped%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86"><span class="toc-number">3.0.5.</span> <span class="toc-text">scoped以及原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#slot%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%9C%BA%E6%99%AF"><span class="toc-number">3.0.6.</span> <span class="toc-text">slot使用以及场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88swiper%E6%8F%92%E4%BB%B6%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="toc-number">3.0.7.</span> <span class="toc-text">Vue插件的使用（swiper插件为例）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F%E7%A9%BF%E9%80%8F"><span class="toc-number">3.0.8.</span> <span class="toc-text">样式穿透</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%92%8C%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82"><span class="toc-number">4.</span> <span class="toc-text">四、生命周期和接口请求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">4.0.1.</span> <span class="toc-text">Vue生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#axios%E5%92%8C%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE"><span class="toc-number">4.0.2.</span> <span class="toc-text">axios和代理配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81Vue%E8%B7%AF%E7%94%B1"><span class="toc-number">5.</span> <span class="toc-text">五、Vue路由</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%AE%89%E8%A3%85%E5%92%8C%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.0.1.</span> <span class="toc-text">路由安装和介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#router-link%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE"><span class="toc-number">5.0.2.</span> <span class="toc-text">router-link相关配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#router%E5%86%85%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-number">5.0.3.</span> <span class="toc-text">router内文件配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E4%BC%A0%E5%80%BC"><span class="toc-number">5.0.4.</span> <span class="toc-text">路径传值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB%EF%BC%88%E6%8B%A6%E6%88%AA%EF%BC%89"><span class="toc-number">5.0.5.</span> <span class="toc-text">导航守卫（拦截）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#watch%EF%BC%9A%E7%9B%91%E5%90%AC"><span class="toc-number">5.0.6.</span> <span class="toc-text">watch：监听</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81Vuex"><span class="toc-number">6.</span> <span class="toc-text">六、Vuex</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Vuex%E4%B8%AD%E7%9A%84state"><span class="toc-number">6.0.1.</span> <span class="toc-text">Vuex中的state</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vuex%E4%B8%AD%E7%9A%84getters"><span class="toc-number">6.0.2.</span> <span class="toc-text">Vuex中的getters</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vuex%E4%B8%AD%E7%9A%84mutations"><span class="toc-number">6.0.3.</span> <span class="toc-text">Vuex中的mutations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vuex%E4%B8%AD%E7%9A%84actions"><span class="toc-number">6.0.4.</span> <span class="toc-text">Vuex中的actions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#actions%E5%92%8Cmutations%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%90%E9%9D%A2%E8%AF%95%E9%A2%98%E3%80%91"><span class="toc-number">6.0.5.</span> <span class="toc-text">actions和mutations的区别【面试题】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vuex%E4%B8%AD%E7%9A%84modules"><span class="toc-number">6.0.6.</span> <span class="toc-text">Vuex中的modules</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81Vue%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="toc-number">7.</span> <span class="toc-text">七、Vue面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-number">7.0.1.</span> <span class="toc-text">双向绑定的原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Object-freeze%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-number">7.0.2.</span> <span class="toc-text">Object.freeze性能优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-1"><span class="toc-number">7.0.3.</span> <span class="toc-text">Vue生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#v-show%E5%92%8Cv-if%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">7.0.4.</span> <span class="toc-text">v-show和v-if的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#v-if%E5%92%8Cv-for%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">7.0.5.</span> <span class="toc-text">v-if和v-for的优先级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ref%E3%80%81keep-alive%E3%80%81nextTick"><span class="toc-number">7.0.6.</span> <span class="toc-text">ref、keep-alive、nextTick</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#computed%E3%80%81methods%E3%80%81watch%E5%8C%BA%E5%88%AB"><span class="toc-number">7.0.7.</span> <span class="toc-text">computed、methods、watch区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1"><span class="toc-number">7.0.8.</span> <span class="toc-text">组件通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#slot%E6%8F%92%E6%A7%BD"><span class="toc-number">7.0.9.</span> <span class="toc-text">slot插槽</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1"><span class="toc-number">7.0.10.</span> <span class="toc-text">路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vuex"><span class="toc-number">7.0.11.</span> <span class="toc-text">Vuex</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue%E6%BA%90%E7%A0%81-%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90"><span class="toc-number">7.0.12.</span> <span class="toc-text">Vue源码-模块解析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue%E6%BA%90%E7%A0%81-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">7.0.13.</span> <span class="toc-text">Vue源码-生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue%E6%BA%90%E7%A0%81-%E6%B7%BB%E5%8A%A0%E4%BA%8B%E4%BB%B6"><span class="toc-number">7.0.14.</span> <span class="toc-text">Vue源码-添加事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue%E6%BA%90%E7%A0%81-data%E5%8A%AB%E6%8C%81"><span class="toc-number">7.0.15.</span> <span class="toc-text">Vue源码-data劫持</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue%E6%BA%90%E7%A0%81-%E6%9B%B4%E6%96%B0%E8%A7%86%E5%9B%BE"><span class="toc-number">7.0.16.</span> <span class="toc-text">Vue源码-更新视图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#v-model%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E5%8E%9F%E7%90%86"><span class="toc-number">7.0.17.</span> <span class="toc-text">v-model双向绑定原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#diff%E7%AE%97%E6%B3%95"><span class="toc-number">7.0.18.</span> <span class="toc-text">diff算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#snabbdom"><span class="toc-number">7.0.19.</span> <span class="toc-text">snabbdom</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E5%86%99diff%E7%AE%97%E6%B3%95-%E2%80%94-%E7%94%9F%E6%88%90%E8%99%9A%E6%8B%9Fdom"><span class="toc-number">7.0.20.</span> <span class="toc-text">手写diff算法 — 生成虚拟dom</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E5%86%99diff%E7%AE%97%E6%B3%95-%E2%80%94-patch%E4%B8%8D%E6%98%AF%E5%90%8C%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9"><span class="toc-number">7.0.21.</span> <span class="toc-text">手写diff算法 — patch不是同一个节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E5%86%99diff%E7%AE%97%E6%B3%95-%E2%80%94-%E7%9B%B8%E5%90%8C%E8%8A%82%E7%82%B9%E6%9C%89%E6%B2%A1%E6%9C%89chrildren"><span class="toc-number">7.0.22.</span> <span class="toc-text">手写diff算法 — 相同节点有没有chrildren</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#diff%E7%AE%97%E6%B3%95%E6%A0%B8%E5%BF%83-%E2%80%94-%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86"><span class="toc-number">7.0.23.</span> <span class="toc-text">diff算法核心 — 理论部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E5%86%99diff%E7%AE%97%E6%B3%95-%E2%80%94-%E5%88%A4%E6%96%AD%E5%89%8D%E5%9B%9B%E7%A7%8D%E6%83%85%E5%86%B5"><span class="toc-number">7.0.24.</span> <span class="toc-text">手写diff算法 — 判断前四种情况</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E5%86%99diff%E7%AE%97%E6%B3%95-%E2%80%94-%E5%88%A4%E6%96%AD%E7%AC%AC%E4%BA%94%E7%A7%8D%E6%83%85%E5%86%B5"><span class="toc-number">7.0.25.</span> <span class="toc-text">手写diff算法 — 判断第五种情况</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/09/ECharts/" title="ECharts">ECharts</a><time datetime="2024-08-08T16:10:47.000Z" title="发表于 2024-08-09 00:10:47">2024-08-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/23/ES6/" title="ES6">ES6</a><time datetime="2024-07-22T17:56:47.000Z" title="发表于 2024-07-23 01:56:47">2024-07-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/23/Vue/" title="Vue">Vue</a><time datetime="2024-07-22T17:56:47.000Z" title="发表于 2024-07-23 01:56:47">2024-07-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/22/Webpack/" title="Webpack">Webpack</a><time datetime="2024-07-22T02:30:47.000Z" title="发表于 2024-07-22 10:30:47">2024-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/21/Git/" title="Git">Git</a><time datetime="2024-07-21T07:01:47.000Z" title="发表于 2024-07-21 15:01:47">2024-07-21</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Camila</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+       clientID: 'Ov23ctPfr8aL3mV6W9uj',
+       clientSecret: '59d90be1057eafcf356f9c9cca5386a5c412ee00',
+       repo: 'cychenhaibin.github.io',
+       owner: 'cychenhaibin',
+       admin: ['cychenhaibin'],
+
+      id: '8529b9f0a1133cd8993138e66838ae21',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'NoWpsCyp4igxwusSLVeAoBid-gzGzoHsz',
+      appKey: '5c3sbJBsPCkdBtopAWY1PXBo',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Gitalk' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script type="text/javascript" src="/js/fairyDustCursor.js"></script><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start -->
+  <script data-pjax src="/js/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://githubcalendarapi.shiguang666.eu.org/api?user=cychenhaibin";
+            var git_color =['#ebedf0', '#a2f7af', '#6ce480', '#54ad63', '#469252', '#31753c', '#1f5f2a', '#13531f', '#084111', '#032b09', '#000000'];
+            var git_user ="cychenhaibin";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log("已挂载hexo-github-calendar https://github.com/Barry-Flynn/hexo-github-calendar");
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style>
+  <script data-pjax src="/js/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://githubcalendarapi.shiguang666.eu.org/api?cychenhaibin";
+            var git_color =['#ebedf0', '#a2f7af', '#6ce480', '#54ad63', '#469252', '#31753c', '#1f5f2a', '#13531f', '#084111', '#032b09', '#000000'];
+            var git_user ="cychenhaibin";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --></body></html>
