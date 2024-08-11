@@ -1,3 +1,4 @@
+http://cychenhaibin.github.io/2024/08/12/TypeScript/
 http://cychenhaibin.github.io/2024/07/23/Vue/
 http://cychenhaibin.github.io/2024/08/09/ECharts/
 http://cychenhaibin.github.io/2024/07/23/ES6/
