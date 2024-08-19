@@ -1,3 +1,4 @@
+http://cychenhaibin.github.io/2024/08/19/%E7%AE%97%E6%B3%95-%E5%93%88%E5%B8%8C/
 http://cychenhaibin.github.io/2024/08/12/TypeScript/
 http://cychenhaibin.github.io/2024/07/23/Vue/
 http://cychenhaibin.github.io/2024/08/09/ECharts/
@@ -22,8 +23,10 @@ http://cychenhaibin.github.io/tags/index.html
 http://cychenhaibin.github.io/2024/07/13/hello-world/
 http://cychenhaibin.github.io/
 http://cychenhaibin.github.io/tags/Front-end/
+http://cychenhaibin.github.io/tags/Algorithm/
 http://cychenhaibin.github.io/tags/Error/
 http://cychenhaibin.github.io/tags/Life/
 http://cychenhaibin.github.io/categories/Front-end/
+http://cychenhaibin.github.io/categories/Algorithm/
 http://cychenhaibin.github.io/categories/Error/
 http://cychenhaibin.github.io/categories/Life/
