@@ -24,9 +24,9 @@ http://cychenhaibin.github.io/2024/07/13/hello-world/
 http://cychenhaibin.github.io/
 http://cychenhaibin.github.io/tags/Front-end/
 http://cychenhaibin.github.io/tags/Error/
-http://cychenhaibin.github.io/tags/Algorithm/
 http://cychenhaibin.github.io/tags/Life/
+http://cychenhaibin.github.io/tags/Algorithm/
 http://cychenhaibin.github.io/categories/Front-end/
 http://cychenhaibin.github.io/categories/Error/
-http://cychenhaibin.github.io/categories/Algorithm/
 http://cychenhaibin.github.io/categories/Life/
+http://cychenhaibin.github.io/categories/Algorithm/
