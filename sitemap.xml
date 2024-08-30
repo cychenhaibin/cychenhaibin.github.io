@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://cychenhaibin.github.io/2024/08/31/this%E3%80%81call%E5%92%8Capply/</loc>
+    
+    <lastmod>2024-08-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://cychenhaibin.github.io/2024/08/30/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84JavaScript/</loc>
     
     <lastmod>2024-08-30</lastmod>
@@ -268,6 +277,13 @@
   </url>
   
   <url>
+    <loc>http://cychenhaibin.github.io/tags/JavaScript%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/</loc>
+    <lastmod>2024-08-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://cychenhaibin.github.io/tags/Algorithm/</loc>
     <lastmod>2024-08-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -276,13 +292,6 @@
   
   <url>
     <loc>http://cychenhaibin.github.io/tags/Life/</loc>
-    <lastmod>2024-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://cychenhaibin.github.io/tags/JavaScript%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/</loc>
     <lastmod>2024-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -305,6 +314,13 @@
   </url>
   
   <url>
+    <loc>http://cychenhaibin.github.io/categories/JavaScript%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/</loc>
+    <lastmod>2024-08-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://cychenhaibin.github.io/categories/Algorithm/</loc>
     <lastmod>2024-08-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -313,13 +329,6 @@
   
   <url>
     <loc>http://cychenhaibin.github.io/categories/Life/</loc>
-    <lastmod>2024-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://cychenhaibin.github.io/categories/JavaScript%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/</loc>
     <lastmod>2024-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
