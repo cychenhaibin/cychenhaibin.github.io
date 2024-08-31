@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://cychenhaibin.github.io/2024/08/31/%E9%97%AD%E5%8C%85%E5%92%8C%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/</loc>
+    
+    <lastmod>2024-08-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://cychenhaibin.github.io/2024/08/31/this%E3%80%81call%E5%92%8Capply/</loc>
     
     <lastmod>2024-08-30</lastmod>
@@ -256,7 +265,7 @@
 
   <url>
     <loc>http://cychenhaibin.github.io/</loc>
-    <lastmod>2024-08-30</lastmod>
+    <lastmod>2024-08-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -264,35 +273,35 @@
   
   <url>
     <loc>http://cychenhaibin.github.io/tags/Front-end/</loc>
-    <lastmod>2024-08-30</lastmod>
+    <lastmod>2024-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://cychenhaibin.github.io/tags/Error/</loc>
-    <lastmod>2024-08-30</lastmod>
+    <lastmod>2024-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://cychenhaibin.github.io/tags/JavaScript%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/</loc>
-    <lastmod>2024-08-30</lastmod>
+    <lastmod>2024-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://cychenhaibin.github.io/tags/Algorithm/</loc>
-    <lastmod>2024-08-30</lastmod>
+    <lastmod>2024-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://cychenhaibin.github.io/tags/Life/</loc>
-    <lastmod>2024-08-30</lastmod>
+    <lastmod>2024-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -301,35 +310,35 @@
   
   <url>
     <loc>http://cychenhaibin.github.io/categories/Front-end/</loc>
-    <lastmod>2024-08-30</lastmod>
+    <lastmod>2024-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://cychenhaibin.github.io/categories/Error/</loc>
-    <lastmod>2024-08-30</lastmod>
+    <lastmod>2024-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://cychenhaibin.github.io/categories/JavaScript%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/</loc>
-    <lastmod>2024-08-30</lastmod>
+    <lastmod>2024-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://cychenhaibin.github.io/categories/Algorithm/</loc>
-    <lastmod>2024-08-30</lastmod>
+    <lastmod>2024-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://cychenhaibin.github.io/categories/Life/</loc>
-    <lastmod>2024-08-30</lastmod>
+    <lastmod>2024-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
