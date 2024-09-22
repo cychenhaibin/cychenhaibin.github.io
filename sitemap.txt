@@ -1,3 +1,4 @@
+http://cychenhaibin.github.io/2024/09/22/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/
 http://cychenhaibin.github.io/2024/09/17/%E6%A8%A1%E5%9D%97%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/
 http://cychenhaibin.github.io/2024/09/13/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/
 http://cychenhaibin.github.io/2024/09/11/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/
@@ -36,10 +37,10 @@ http://cychenhaibin.github.io/tags/index.html
 http://cychenhaibin.github.io/2024/07/13/hello-world/
 http://cychenhaibin.github.io/
 http://cychenhaibin.github.io/tags/Front-end/
-http://cychenhaibin.github.io/tags/Error/
 http://cychenhaibin.github.io/tags/JavaScript%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/
+http://cychenhaibin.github.io/tags/Error/
 http://cychenhaibin.github.io/tags/Algorithm/
 http://cychenhaibin.github.io/categories/Front-end/
-http://cychenhaibin.github.io/categories/Error/
 http://cychenhaibin.github.io/categories/JavaScript%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/
+http://cychenhaibin.github.io/categories/Error/
 http://cychenhaibin.github.io/categories/Algorithm/

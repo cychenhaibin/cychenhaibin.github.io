@@ -1,0 +1,402 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>享元模式 | Camila's blog</title><meta name="author" content="Camila"><meta name="copyright" content="Camila"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="享元（flyweight）模式是一种用于性能优化的模式，”fly”在这里是苍蝇的意思，意为蝇最级。享元模式的核心是运用共享技术来有效支持大量细粒度对象。 如果系统中因为创建了大量类似的对象而导致内存占用过高，享元模式就非常有用了。在JavaScript中，浏览器特别是移动端的浏览器分配的内存并不算多，如何节省内存就成了一件非常有意义的事情。 一、初识享元模式假设有个内衣工厂，目前的产品有50种男式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="享元模式">
+<meta property="og:url" content="http://cychenhaibin.github.io/2024/09/22/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:site_name" content="Camila&#39;s blog">
+<meta property="og:description" content="享元（flyweight）模式是一种用于性能优化的模式，”fly”在这里是苍蝇的意思，意为蝇最级。享元模式的核心是运用共享技术来有效支持大量细粒度对象。 如果系统中因为创建了大量类似的对象而导致内存占用过高，享元模式就非常有用了。在JavaScript中，浏览器特别是移动端的浏览器分配的内存并不算多，如何节省内存就成了一件非常有意义的事情。 一、初识享元模式假设有个内衣工厂，目前的产品有50种男式">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://cychenhaibin.github.io/img/loading.png">
+<meta property="article:published_time" content="2024-09-22T07:51:47.000Z">
+<meta property="article:modified_time" content="2024-09-22T07:52:11.013Z">
+<meta property="article:author" content="Camila">
+<meta property="article:tag" content="JavaScript的设计模式和开发实践">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cychenhaibin.github.io/img/loading.png"><link rel="shortcut icon" href="/img/loading.gif"><link rel="canonical" href="http://cychenhaibin.github.io/2024/09/22/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-center"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '享元模式',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-09-22 15:52:11'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><script src="https://npm.elemecdn.com/echarts@4.7.0/dist/echarts.min.js"></script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Camila's blog" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/loading.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Camila's blog"><span class="site-name">Camila's blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">享元模式</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-22T07:51:47.000Z" title="发表于 2024-09-22 15:51:47">2024-09-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-22T07:52:11.013Z" title="更新于 2024-09-22 15:52:11">2024-09-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/JavaScript%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/">JavaScript的设计模式和开发实践</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="享元模式"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2024/09/22/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div><article class="post-content" id="article-container"><p>享元（flyweight）模式是一种用于性能优化的模式，”fly”在这里是苍蝇的意思，意为蝇最级。享元模式的核心是运用共享技术来有效支持大量细粒度对象。</p>
+<p>如果系统中因为创建了大量类似的对象而导致内存占用过高，享元模式就非常有用了。在JavaScript中，浏览器特别是移动端的浏览器分配的内存并不算多，如何节省内存就成了一件非常有意义的事情。</p>
+<h3 id="一、初识享元模式"><a href="#一、初识享元模式" class="headerlink" title="一、初识享元模式"></a>一、初识享元模式</h3><p>假设有个内衣工厂，目前的产品有50种男式内衣和50种女士内衣，为了推销产品，工厂决定生产一些塑料模特来穿上他们的内衣拍成广告照片。正常情况下需要50个男模特和50个女模特，然后让他们每人分别穿上一件内衣来拍照。不使用享元模式的情况下，在程序里也许会这样写：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">Model</span> = <span class="keyword">function</span>(<span class="params"> sex, underwear</span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">sex</span> = sex;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">underwear</span> = underwear;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Model</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">takePhoto</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;sex=&#x27;</span> + <span class="variable language_">this</span>.<span class="property">sex</span> + <span class="string">&#x27;underwear=&#x27;</span> + <span class="variable language_">this</span>.<span class="property">underwear</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">50</span>; i++)&#123;</span><br><span class="line">    <span class="keyword">var</span> maleModel = <span class="keyword">new</span> <span class="title class_">Model</span>(<span class="string">&#x27;male&#x27;</span>, <span class="string">&#x27;underwear&#x27;</span> + i);</span><br><span class="line">    maleModel.<span class="title function_">takePhoto</span>();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">1</span>; j &lt;= <span class="number">50</span>; j++)&#123;</span><br><span class="line">    <span class="keyword">var</span> maleModel = <span class="keyword">new</span> <span class="title class_">Model</span>(<span class="string">&#x27;female&#x27;</span>, <span class="string">&#x27;underwear&#x27;</span> + i);</span><br><span class="line">    maleModel.<span class="title function_">takePhoto</span>();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>要得到一张照片，每次都需要传入sex和underwear参数，如上所述，现在一共有50种男内衣和50种女内衣，所以一共会产生100个对象。如果将来生产了10000种内衣，那这个程序可能会因为存在如此多的对象已经提前崩溃。</p>
+<p>下面我们来考虑以下如何优化这个场景。虽然有100种内衣，但很明显并不需要50个男模特和50个女模特。其实男模特和女模特各自有一个就足够了，他们分别穿上不同的内衣来拍照。</p>
+<p>先把underwear参数从构造函数中移除，构造函数只接收sex参数：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">Model</span> = <span class="keyword">function</span>(<span class="params"> sex </span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">sex</span> = sex;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Model</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">takePhoto</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;sex=&#x27;</span> + <span class="variable language_">this</span>.<span class="property">sex</span> + <span class="string">&#x27;underwear=&#x27;</span> + <span class="variable language_">this</span>.<span class="property">underwear</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>分别创建一个男模特对象和一个女模特对象：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> maleModel = <span class="keyword">new</span> <span class="title class_">Model</span>(<span class="string">&#x27;male&#x27;</span>),</span><br><span class="line">    femaleModel = <span class="keyword">new</span> <span class="title class_">Model</span>(<span class="string">&#x27;female&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>给男模特依次穿上所有的男装，并进行拍照：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">50</span>; i++)&#123;</span><br><span class="line">    maleModel.<span class="property">underwear</span> = <span class="string">&#x27;underwear&#x27;</span> + i;</span><br><span class="line">    maleModel.<span class="title function_">takePhoto</span>();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>给女模特依次穿上所有的女装，并进行拍照：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">1</span>; j &lt;= <span class="number">50</span>; j++)&#123;</span><br><span class="line">    femaleModel.<span class="property">underwear</span> = <span class="string">&#x27;underwear&#x27;</span> + i;</span><br><span class="line">    femaleModel.<span class="title function_">takePhoto</span>();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到改进之后的代码，只需要两个对象便完成了同样的功能。</p>
+<h3 id="二、内部状态与外部状态"><a href="#二、内部状态与外部状态" class="headerlink" title="二、内部状态与外部状态"></a>二、内部状态与外部状态</h3><p>上面那个例子便是享元模式的雏形，享元模式要求将对象的属性划分为内部状态与外部状态（状态通常指属性）。享元模式的目标是尽量减少共享对象的数量，关于如何划分内部状态和外部状态下面提供了一些指引：</p>
+<ul>
+<li>内部状态存储于对象内部。</li>
+<li>内部状态可以被一些对象共享。</li>
+<li>内部状态独立于具体的场景，通常不会改变。</li>
+<li>外部状态取决于具体的场景，并根据场景而变化，外部状态不能被共享。</li>
+</ul>
+<p>这样一来，我们便可以把所有内部状态相同的对象都指引为同一个共享的对象。而外部状态可以从对象身上剥离出来，并存储在外部。</p>
+<p>剥离了外部状态的对象成为共享对象，外部状态在必要时被传入共享对象来组装成一个完整的对象。虽然组装外部状态成为了一个完整对象的过程需要花费一定的时间，但却可以大大减少系统中的对象数量，相比之下，这点时间或许是微不足道的。因此，享元模式是一种用时间换空间的优化模式。</p>
+<p>在上面的例子中，性别是内部状态，内衣是外部状态，通过区分这两种状态，大大减少了系统中的对象数量。通常来讲，内部状态有多少种组合，系统便最多存在多少个对象，因为性别通常只有男女两种，所以该内衣厂商最多只需要2个对象。</p>
+<p>使用享元模式的关键是如何区别内部状态和外部状态。可以被对象共享的属性通常划分为内部状态，如同不管什么样式的衣服，都可以按照性别不同，穿在同一个男模特或者女模特身上，模特的性别就可以作为内部状态储存在共享对象内部。而外部状态取决于具体的场景，并根据场景而变化，就像例子中每件衣服都是不同的，它们不能被一些对象共享，因此只能被划分为外部状态。</p>
+<h3 id="三、享元模式的通用结构"><a href="#三、享元模式的通用结构" class="headerlink" title="三、享元模式的通用结构"></a>三、享元模式的通用结构</h3><p>示例初步展示了享元模式的威力，但这还不是一个完整的享元模式，在这个例子中还存在以下两个问题。</p>
+<ul>
+<li>我们通过构造函数显式new出了男女两个model对象，在其他系统中，也许并不是一开始就需要所有的共享对象。</li>
+<li>给model对象手动设置了underwear外部状态，在更复杂的系统中，这不是一个最好的方式，因为外部状态可能会相当复杂，它们与共享对象的联系会变得困难。</li>
+</ul>
+<p>通过一个对象工厂来解决第一个问题，只有当某种共享对象被真正需要时，它才从工厂中被创建出来。对于第二个问题，可以用一个管理器来记录对象相关的外部状态，使这些外部状态通过某个钩子和共享对象联系起来。</p>
+<h3 id="四、享元模式的适用性"><a href="#四、享元模式的适用性" class="headerlink" title="四、享元模式的适用性"></a>四、享元模式的适用性</h3><p>享元模式是一种很好的性能优化方案，带来的好处很大程度上取决于如何使用以及何时使用，一般来说，以下情况发生时便可以使用享元模式。</p>
+<ul>
+<li><p>一个程序中使用了大量的相似对象。</p>
+</li>
+<li><p>由于使用了大量对象，造成很大的内存开销。</p>
+</li>
+<li><p>对象的大多数状态都可以变为外部状态。</p>
+</li>
+<li><p>剥离出对象的外部状态之后，可以用相对较少的共享对象取代大量对象。</p>
+</li>
+</ul>
+<h3 id="五、再谈内部状态和外部状态"><a href="#五、再谈内部状态和外部状态" class="headerlink" title="五、再谈内部状态和外部状态"></a>五、再谈内部状态和外部状态</h3><p>如果顺利的话，通过前面的例子已经了解到内部状态和外部状态的概念以及享元模式的工作原理。我们知道，实现享元模式的关键是把内部状态和外部状态分离出来。有多少种内部状态的组合，系统中便最多存在多少个共享对象，而外部状态储存在共享对象的外部，在必要时被传入共享对象来组装成一个完整的对象。现在考虑两种极端情况，即对象没有外部状态和没有内部状态的时候。</p>
+<ol>
+<li><h4 id="没有内部状态的享元"><a href="#没有内部状态的享元" class="headerlink" title="没有内部状态的享元"></a>没有内部状态的享元</h4><p>很多网盘都提供了极速上传（控件）与普通上传（Flash）两种模式，如果极速上传不好使（可能是没有安装控件或者控件损坏），用户还可以随时切换到普通上传模式，所以这里确实是需要同时存在两个不同的upload共享对象。</p>
+<p>但不是每个网站都必须做得如此复杂，很多小一些的网站就只支持单一的上传方式。假设我们是这个网站的开发者，不需要考虑极速上传和普通上传之间的切换，这意味着在之前的代码中作为内部状态的uploadType属性是可以删掉的。</p>
+<p>在继续使用享元模式的前提下，构造函数Upload就变成了无参数形式：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">Upload</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>其他属性如fileName、fileSize、dom依然可以作为外部状态保存在共享对象外部。在uploadType作为内部状态的时候，它可能为控件，也可能为Flash，所以当时最多可以组合出两个共享对象。而现在已经没有了内部状态，这意味着只需要唯一的一个共享对象。现在改写创建享元对象的工厂：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">UploadFactory</span> = (<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> uploadObj;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">create</span>:: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(uploadObj)&#123;</span><br><span class="line">                <span class="keyword">return</span> uploadObj;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> uploadObj = <span class="keyword">new</span> <span class="title class_">Upload</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+<p>管理器部分的代码不需要改动，还是复杂剥离和组装外部状态。可以看到，当对象没有内部状态的时候，生产共享对象的工厂实际上变成了一个单例工厂。虽然这时候的共享对象没有内部状态的区分，但还是有剥离外部状态的过程，依然倾向于称之为享元模式。</p>
+</li>
+<li><h4 id="没有外部状态的享元"><a href="#没有外部状态的享元" class="headerlink" title="没有外部状态的享元"></a>没有外部状态的享元</h4><p>网上许多资料中，经常把Java或者C#的字符串看成享元，这种说法是否正确呢？我们看看下面这段代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span>&#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">a1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;a&quot;</span>).intern();</span><br><span class="line">        <span class="type">String</span> <span class="variable">a2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;a&quot;</span>).intern();</span><br><span class="line">        System.out.println(a1 == a2);               <span class="comment">// true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这段Java代码里，分别new了两个字符串对象a1和a2。intern是一种对象池技术，<code>new String(&quot;a&quot;).intern()</code>的含义如下。</p>
+<ul>
+<li>如果值为a的字符串对象已经存在于对象池中，则返回这个对象的引用。</li>
+<li>反之，将字符串a的对象添加进对象池，并返回这个对象的引用。</li>
+</ul>
+<p>所以a1 &#x3D;&#x3D; a2的结果是true。但这并不是使用了享元模式的结果，享元模式的关键是区别内部状态和外部状态。享元模式的过程是剥离外部状态，并把外部状态保存在其他地方，在合适的时刻再把外部状态组装进共享对象。这里并没有剥离外部状态的过程，a1和a2指向的完全就是同一个对象，所以如果没有外部状态的分离，即使这里使用了共享技术，但并不是一个纯粹的享元模式。</p>
+</li>
+</ol>
+<h3 id="六、对象池"><a href="#六、对象池" class="headerlink" title="六、对象池"></a>六、对象池</h3><p>在前面已经提到了Java中String的对象池，下面来学习这种共享技术。对象池维护一个装载空闲对象的池子，如果需要对象的时候，不是直接new，而是转从对象池里获取。如果对象池里没有空闲对象，则创建一个新的对象，当获取出的对象完成它的职责之后，再进入池子等待被下次获取。</p>
+<p>对象池的原理很好理解，比如我们组人手一本《JavaScript》，从节约的角度来讲，这并不是很划算，因为大部分时间这些书都被闲置在各自的书架上，所以我们一开始就只买一本，或者一起建立一个小型图书馆（对象池），需要看书的时候就从图书馆里借，看完了之后再把书还回图书馆。如果同时有三个人要看这本书，现在图书馆里只有两本，那我们再马上去书店买一本放入图书馆。</p>
+<p>对象池技术的应用非常广泛，HTTP连接池和数据库连接池都是其代表应用。在Web前端开发中，对象池使用最多的场景大概就是跟DOM有关的操作。很多空间和时间都消耗在了DOM节点上，如何避免频繁地创建和删除DOM节点就成了一个有意义的话题。</p>
+<ol>
+<li><h4 id="对象池实现"><a href="#对象池实现" class="headerlink" title="对象池实现"></a>对象池实现</h4><p>假设我们在开发一个地图应用，地图上经常会出现一些标志地名的小气泡，我们叫他toolTip。</p>
+<p>在搜索我家附近地图的时候，页面出现了2个小气泡。当我再搜索附近拉面馆时，页面中出现了6个小气泡。按照对象池的思想，在第二次搜索开始之前，并不会把第一次创建的2个小气泡删除掉，而是把它们放进对象池。这样在第二次的搜索结束页面里，我们只需要再创建4个小气泡而不是6个。</p>
+<p>先定义一个获取小气泡节点的工厂，作为对象池的数组成为私有属性被包含在工厂闭包里，这个工厂有两个暴露对外的方法，create表示获取一个div节点，recover表示回收一个div节点：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> toolTipFactory = (<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> toolTipPool = [];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">create</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(toolTipPool.<span class="property">length</span> === <span class="number">0</span>)&#123;                 <span class="comment">// 如果对象池为空</span></span><br><span class="line">                <span class="keyword">var</span> div = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;div&#x27;</span>);  <span class="comment">// 创建一个dom</span></span><br><span class="line">                <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(div);</span><br><span class="line">                <span class="keyword">return</span> div;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;                                        <span class="comment">// 如果对象池里不为空</span></span><br><span class="line">                <span class="keyword">return</span> too;<span class="title class_">TipPool</span>.<span class="title function_">shift</span>();               <span class="comment">// 则从对象池中取出一个dom</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">recover</span>: <span class="keyword">function</span>(<span class="params">tooltipDom</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> toolTipPool.<span class="title function_">push</span>(tooltipDom);          <span class="comment">// 对象池回收dom</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+<p>现在把时钟拨回进行第一次搜索的时刻，目前需要创建2个小气泡节点，为了方便回收，用一个数组ary来记录它们：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> ary = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, str; str = [<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;B&#x27;</span>][i++];)&#123;</span><br><span class="line">    <span class="keyword">var</span> toolTip = toolTipFactory.<span class="title function_">create</span>();</span><br><span class="line">    toolTip.<span class="property">innerHTML</span> = str;</span><br><span class="line">    ary.<span class="title function_">push</span>(toolTip);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>如果愿意稍稍测试一下，可以看到页面中出现了innerHTML分别为A和B的两个div节点。</p>
+<p>接下来假设地图需要重新开始绘制，在此之前要把这两个节点回收进对象池：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, toolTip; toolTip = ary[i++];)&#123;</span><br><span class="line">    toolTipFactory.<span class="title function_">recover</span>(toolTip);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>再创建6个小气泡：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, str; str = [<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;C&#x27;</span>,<span class="string">&#x27;D&#x27;</span>,<span class="string">&#x27;E&#x27;</span>,<span class="string">&#x27;F&#x27;</span>][i++];)&#123;</span><br><span class="line">    <span class="keyword">var</span> toolTip = toolTipFactory.<span class="title function_">create</span>();</span><br><span class="line">    toolTip.<span class="property">innerHTML</span> = str;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>再测试一番，页面中出现了内容分别为A、B、C、D、E、F的6个节点，上一次创建好的节点被共享给了下一次操作。对象池跟享元模式的思想有点近似，虽然innerHTML的值A、B、C、D等也可以看成节点的外部状态，但再这里我们并没有主动分离内部状态和外部状态的过程 。</p>
+</li>
+<li><h4 id="通用对象池实现"><a href="#通用对象池实现" class="headerlink" title="通用对象池实现"></a>通用对象池实现</h4><p>还可以在对象池工厂里，把创建对象的具体过程封装起来，实现一个通用的对象池：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> objectPoolFactory = <span class="keyword">function</span>(<span class="params">createObjFn</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> objectPool = [];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">create</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="keyword">var</span> obj = objectPool.<span class="property">length</span> === <span class="number">0</span> ?</span><br><span class="line">                createObjFn.<span class="title function_">apply</span>(<span class="variable language_">this</span>, <span class="variable language_">arguments</span>) : objectPool.<span class="title function_">shift</span>();</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> obj;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">recover</span>: <span class="keyword">function</span>(<span class="params">obj</span>)&#123;</span><br><span class="line">            objectPool.<span class="title function_">push</span>(obj);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>现在利用objectPoolFactory来创建一个装载一些iframe的对象池：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> iframeFactory = <span class="title function_">objectPoolFactory</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> iframe = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;iframe&#x27;</span>);</span><br><span class="line">    <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(iframe);</span><br><span class="line">    </span><br><span class="line">    iframe.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        iframe.<span class="property">onload</span> = <span class="literal">null</span>;             <span class="comment">// 防止iframe重复加载的bug</span></span><br><span class="line">        iframeFactory.<span class="title function_">recover</span>(iframe);    <span class="comment">// iframe加载完成之后回收节点</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> iframe;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> iframe1 = iframeFactory.<span class="title function_">create</span>();</span><br><span class="line">iframe1.<span class="property">src</span> = <span class="string">&#x27;http://baidu.com&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> iframe2 = iframeFactory.<span class="title function_">create</span>();</span><br><span class="line">iframe2.<span class="property">src</span> = <span class="string">&#x27;http://QQ.com&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> iframe3 = iframeFactory.<span class="title function_">create</span>();;</span><br><span class="line">    iframe3.<span class="property">src</span> = <span class="string">&#x27;http://163.com&#x27;</span>;</span><br><span class="line">&#125;, <span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
+
+<p>对象池是另外一种性能优化方案，它跟享元模式有一些相似之处，但没有分离内部状态和外部状态这个过程。</p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4></li>
+</ol>
+<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://cychenhaibin.github.io">Camila</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://cychenhaibin.github.io/2024/09/22/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/">http://cychenhaibin.github.io/2024/09/22/享元模式/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://cychenhaibin.github.io" target="_blank">Camila's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JavaScript%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/">JavaScript的设计模式和开发实践</a></div><div class="post_share"><div class="social-share" data-image="/img/loading.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/09/17/%E6%A8%A1%E5%9D%97%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" title="模板方法模式"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">模板方法模式</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/08/31/this%E3%80%81call%E5%92%8Capply/" title="this、call和apply"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-31</div><div class="title">this、call和apply</div></div></a></div><div><a href="/2024/09/03/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" title="代理模式"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-03</div><div class="title">代理模式</div></div></a></div><div><a href="/2024/09/02/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" title="单例模式"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-02</div><div class="title">单例模式</div></div></a></div><div><a href="/2024/09/11/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" title="命令模式"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-11</div><div class="title">命令模式</div></div></a></div><div><a href="/2024/09/11/%E5%8F%91%E5%B8%83-%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F/" title="发布-订阅模式"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-11</div><div class="title">发布-订阅模式</div></div></a></div><div><a href="/2024/09/01/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" title="策略模式"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-01</div><div class="title">策略模式</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Gitalk</span><span id="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/loading.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Camila</div><div class="author-info__description">Chongqing University of Posts and Telecommunications 2026 undergraduate student in computer science and technology, front-end enthusiast</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/cychenhaibin"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/cychenhaibin" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%88%9D%E8%AF%86%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">一、初识享元模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%86%85%E9%83%A8%E7%8A%B6%E6%80%81%E4%B8%8E%E5%A4%96%E9%83%A8%E7%8A%B6%E6%80%81"><span class="toc-number">2.</span> <span class="toc-text">二、内部状态与外部状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F%E7%9A%84%E9%80%9A%E7%94%A8%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text">三、享元模式的通用结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F%E7%9A%84%E9%80%82%E7%94%A8%E6%80%A7"><span class="toc-number">4.</span> <span class="toc-text">四、享元模式的适用性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%86%8D%E8%B0%88%E5%86%85%E9%83%A8%E7%8A%B6%E6%80%81%E5%92%8C%E5%A4%96%E9%83%A8%E7%8A%B6%E6%80%81"><span class="toc-number">5.</span> <span class="toc-text">五、再谈内部状态和外部状态</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B2%A1%E6%9C%89%E5%86%85%E9%83%A8%E7%8A%B6%E6%80%81%E7%9A%84%E4%BA%AB%E5%85%83"><span class="toc-number">5.1.</span> <span class="toc-text">没有内部状态的享元</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B2%A1%E6%9C%89%E5%A4%96%E9%83%A8%E7%8A%B6%E6%80%81%E7%9A%84%E4%BA%AB%E5%85%83"><span class="toc-number">5.2.</span> <span class="toc-text">没有外部状态的享元</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%AF%B9%E8%B1%A1%E6%B1%A0"><span class="toc-number">6.</span> <span class="toc-text">六、对象池</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%B1%A0%E5%AE%9E%E7%8E%B0"><span class="toc-number">6.1.</span> <span class="toc-text">对象池实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%AF%B9%E8%B1%A1%E6%B1%A0%E5%AE%9E%E7%8E%B0"><span class="toc-number">6.2.</span> <span class="toc-text">通用对象池实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">6.3.</span> <span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-1"><span class="toc-number">7.</span> <span class="toc-text"></span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/22/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" title="享元模式">享元模式</a><time datetime="2024-09-22T07:51:47.000Z" title="发表于 2024-09-22 15:51:47">2024-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/17/%E6%A8%A1%E5%9D%97%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" title="模板方法模式">模板方法模式</a><time datetime="2024-09-17T09:22:47.000Z" title="发表于 2024-09-17 17:22:47">2024-09-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/13/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/" title="组合模式">组合模式</a><time datetime="2024-09-12T16:06:47.000Z" title="发表于 2024-09-13 00:06:47">2024-09-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/11/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" title="命令模式">命令模式</a><time datetime="2024-09-11T12:36:47.000Z" title="发表于 2024-09-11 20:36:47">2024-09-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/11/%E5%8F%91%E5%B8%83-%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F/" title="发布-订阅模式">发布-订阅模式</a><time datetime="2024-09-11T08:59:47.000Z" title="发表于 2024-09-11 16:59:47">2024-09-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Camila</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+       clientID: 'Ov23ctPfr8aL3mV6W9uj',
+       clientSecret: '59d90be1057eafcf356f9c9cca5386a5c412ee00',
+       repo: 'cychenhaibin.github.io',
+       owner: 'cychenhaibin',
+       admin: ['cychenhaibin'],
+
+      id: 'c0d363dc0ff0ab70ce65712f5b05e23d',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'NoWpsCyp4igxwusSLVeAoBid-gzGzoHsz',
+      appKey: '5c3sbJBsPCkdBtopAWY1PXBo',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Gitalk' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script type="text/javascript" src="/js/fairyDustCursor.js"></script><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start -->
+  <script data-pjax src="/js/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://githubcalendarapi.shiguang666.eu.org/api?user=cychenhaibin";
+            var git_color =['#ebedf0', '#a2f7af', '#6ce480', '#54ad63', '#469252', '#31753c', '#1f5f2a', '#13531f', '#084111', '#032b09', '#000000'];
+            var git_user ="cychenhaibin";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log("已挂载hexo-github-calendar https://github.com/Barry-Flynn/hexo-github-calendar");
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --></body></html>
