@@ -1,3 +1,4 @@
+http://cychenhaibin.github.io/categories/index.html
 http://cychenhaibin.github.io/2024/07/15/App/
 http://cychenhaibin.github.io/2024/10/13/%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/
 http://cychenhaibin.github.io/2024/10/12/%E8%AE%A1%E7%BD%91%E5%9F%BA%E7%A1%80/
@@ -35,7 +36,6 @@ http://cychenhaibin.github.io/myself/index.html
 http://cychenhaibin.github.io/timeline/index.html
 http://cychenhaibin.github.io/link/index.html
 http://cychenhaibin.github.io/messageboard/index.html
-http://cychenhaibin.github.io/categories/index.html
 http://cychenhaibin.github.io/tags/index.html
 http://cychenhaibin.github.io/2024/07/13/hello-world/
 http://cychenhaibin.github.io/
