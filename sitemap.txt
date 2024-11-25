@@ -1,4 +1,5 @@
 http://cychenhaibin.github.io/2024/11/03/TCP%E7%AF%87/
+http://cychenhaibin.github.io/2024/11/07/Kali%E6%9C%80%E5%BC%BA%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7%20%E2%80%94%E2%80%94%20metasploit/
 http://cychenhaibin.github.io/2024/08/22/Vue/
 http://cychenhaibin.github.io/2024/11/05/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/
 http://cychenhaibin.github.io/2024/10/19/HTTP%E7%AF%87/
